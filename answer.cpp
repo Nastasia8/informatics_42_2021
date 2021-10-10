@@ -3,11 +3,11 @@
 
 int main()
 {
-    float i = 0;
+    float x = 0;
     long double answer;
-    for ( i = 0.11; i < 0.37; i += 0.01 )
+    for ( x = 0.11; x < 0.37; x += 0.01 )
     {
-        answer = ((pow(sin(i), 3) + pow(cos(i), 3)) * log(i));
+        answer = ((pow(sin(x), 3) + pow(cos(x), 3)) * log(x));
         std::cout << answer << std::endl;
  
    }
