@@ -11,7 +11,7 @@ int main(int args, char* argv[]) {
     float x_end = 1.08;
     float step = 0.2;
 
-    for (x; x < x_end; x += step) {
+    for (; x < x_end; x += step) {
         cout << log(abs((b - x)*(b + x))) / pow(abs((x - a)*(x + a)), 0.2) << endl;
     };
     
@@ -22,4 +22,4 @@ int main(int args, char* argv[]) {
     };
 
     return 0;
-}
+};
