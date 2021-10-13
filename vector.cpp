@@ -54,7 +54,7 @@ void checkIn(std::string &check){
        }
        catch(const std::exception& e)
        {
-           std::cout<< "Incorrect type of data, try again" << std::endl;
+           std::cout << "Incorrect type of data, try again" << std::endl;
        }
        
     }
