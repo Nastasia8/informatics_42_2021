@@ -14,9 +14,9 @@ int main(int args, char* argv[]) {
     for (; x < x_end; x += step) {
         cout << log(abs((b - x)*(b + x))) / pow(abs((x - a)*(x + a)), 0.2) << endl;
     };
-    
+
     float xs[5] = {0.1, 0.3, 0.4, 0.45, 0.65};
-    
+
     for (auto x : xs) {
         cout << log(abs((b - x)*(b + x))) / pow(abs((x - a)*(x + a)), 0.2) << endl;
     };
