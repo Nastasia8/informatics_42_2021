@@ -30,11 +30,13 @@ int main (int argc, char *argv[]){
     vctr_2[2] = std::stof(check);
     
     std::cout << "Scalar product of a and b: " << std::endl;
-    float scl_prod = input_vctr[0]*vctr_2[0] + input_vctr[1]*vctr_2[1] + input_vctr[2]*vctr_2[2];
-    std::cout << scl_prod << std::endl;
+    std::cout << input_vctr[0]*vctr_2[0] + input_vctr[1]*vctr_2[1] + input_vctr[2]*vctr_2[2] << std::endl;
 
     std::cout << "Vector product of a and b: " << std::endl;
-    std::cout << getLength(input_vctr)*getLength(vctr_2)*sqrt(1-pow(scl_prod/(getLength(input_vctr)*getLength(vctr_2)),2)) << std::endl;
+    float prod_x = input_vctr[1]*vctr_2[2] - input_vctr[2]*vctr_2[1];
+    float prod_y = -(input_vctr[0]*vctr_2[2] - input_vctr[2]*vctr_2[0]);
+    float prod_z = input_vctr[0]*vctr_2[1] - input_vctr[1]*vctr_2[0];
+    std::cout << "{" << prod_x << ", " << prod_y << ", " << prod_z << "}" << std::endl;
 }
 float getLength(float input[]){
     int x = input[0];
