@@ -42,9 +42,9 @@ int main()
 
     cin>>a>>b>>c>>d>>h;
 
-    trapeze(1,2,3);
+    trapeze(a,b,h);
 
-    trapeze(5,6,7,1);
+    trapeze(a,b,c,d);
 
     cout <<"Enter variable for circle: = ";
     
