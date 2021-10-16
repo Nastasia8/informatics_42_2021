@@ -5,7 +5,7 @@ namespace area {
     void calculateCircleArea() {
         std::cout << "Какие данные у вас есть о круге?" << std::endl
                   << "Радиус - 1" << std::endl << "Диаметр - 2"
-                  << std::endl << "Периметр - 3" << std::endl;
+                  << std::endl;
         char flag;
         std::cin >> flag;
         
@@ -15,18 +15,15 @@ namespace area {
         case '1':
             std::cin >> data;
             std::cout << "Площадь круга = " << 3.14 * (data * data) << std::endl;
+            std::cout << "Переметр круга = " << 2 * 3.14 * data << std::endl;
             break;
 
         case '2':
             std::cin >> data;
             std::cout << "Площадь круга = " << (3.14 * (data * data)) / 4 << std::endl;
+            std::cout << "Переметр круга = " << 2 * 3.14 * (data * 0.5) << std::endl;
             break;
 
-        case '3':
-            std::cin >> data;
-            std::cout << "Площадь круга = " << (data * data) / (4 * 3.14) << std::endl;
-            break;
-        
         default:
             break;
         }
@@ -42,6 +39,7 @@ namespace area {
         case '1':
             std::cin >> data;
             std::cout << "Площадь квадрата = " << data * data << std::endl;
+            std::cout << "Периметр квадрата = " << 4 * data << std::endl;
             break;
 
         case '2':
@@ -58,6 +56,7 @@ namespace area {
         float a, b, h;
         std::cin >> a >> b >> h;
         std::cout << "Площадь трапеции = " << 0.5*(a + b)*h << std::endl;
+
     };
 };
 
