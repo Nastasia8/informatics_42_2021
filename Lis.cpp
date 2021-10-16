@@ -11,20 +11,20 @@ int main(int argc, char *argv[])
     int i = 0;
     int select;
 
-    double c[i] = { 2.4, 2.8, 3.9, 4.7, 3.16 };
-    double g;
-    double y;
+    double c[i] = { 2.4, 2.8, 3.9, 4.7, 3.16 };         // Массив для задачи B т.е. это x1,x2 и т.д.
+    double g = 0;                                           // g это переменная функции для задачи A
+    double y = 0;                                           // y это переменная функция для задачи B
 
-    float Xn = 1.56;
-    float Xk = 4.71;
-    float dX = 0.63;
+    float Xn = 1.56;                                    // Xn - это x начало
+    float Xk = 4.71;                                    // Xk - это х конец
+    float dX = 0.63;                                    // dX - это разница конца и начала
 
     cout << "select task type 1 or 2" <<endl;
     cin >> select;
 
     switch(select)
     {
-        case 1:
+        case 1:                                         // Case 1 это задача B
         {
             while(i <= 4)
             {
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
             }
             break;
         }
-        case 2:
+        case 2:                                         // Case 2 это задача A
         {
             while(Xn <= Xk)
             {
