@@ -21,7 +21,7 @@ int main()
         }
         else if (x <= 5)
         {
-            y = (pow(a + (b * x), 2.5)) / 1.8 + (pow(cos(a * x), 3));
+            y = (pow(a + (b * x), 2.5)) / (1.8 + (pow(cos(a * x), 3)));
         }
         cout << " Value Y:= " << y << " by X:= " << x << endl;
     }
@@ -39,7 +39,7 @@ int main()
         }
         else if (xf[i] <= 5)
         {
-            y = (pow(a + (b * xf[i]), 2.5)) / 1.8 + (pow(cos(a * xf[i]), 3));
+            y = (pow(a + (b * xf[i]), 2.5)) / (1.8 + (pow(cos(a * xf[i]), 3)));
         }
         cout << " Value Y:= " << y << " by X:= " << xf[i] << endl;
 
