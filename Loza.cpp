@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     vec_length_b = (1, 5, 3) / vec_length_a;
     cout << vec_length_b << endl;
 
-    cout << "enter the coordinate x1" <<endl;            // введите координату
+    cout << "enter the coordinate x1" <<endl;             // введите координату
     cin >> x1;
     cout << "enter the coordinate y1" <<endl;
     cin >> y1;
