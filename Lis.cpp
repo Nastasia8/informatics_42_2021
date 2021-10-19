@@ -7,10 +7,10 @@ int main(int argc, char *argv[])
     const float a = 7.2;
     const float b = 1.3;
 
-    int i = 0;
     int select;
+    int i = 4;
 
-    double c[i] = { 2.4, 2.8, 3.9, 4.7, 3.16 };         // Массив для задачи B т.е. это x1,x2 и т.д.
+    double c[5] = { 2.4, 2.8, 3.9, 4.7, 3.16 };         // Массив для задачи B т.е. это x1,x2 и т.д.
     double g = 0;                                           // g это переменная функции для задачи A
     double y = 0;                                           // y это переменная функция для задачи B
 
@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
     {
         case 1:                                         // Case 1 это задача B
         {
-            while(i <= 4)
+            while(i >= 0)
             {
-                y = pow(((a + b * c[i]) / pow(long(c[i]), 3)), 0.2);
+                y = pow(((a + b * c[i]) / pow(c[i], 3)), 0.2);
                 cout << "y = " << y << endl;
-                i++;
+                i--;
             }
             break;
         }
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         {
             while(Xn <= Xk)
             {
-                g = pow(((a + b * Xn) / pow(long(Xn), 3)), 0.2);
+                g = pow(((a + b * Xn) / pow(Xn, 3)), 0.2);
                 cout << "g = " << g << endl;
                 Xn = Xn + dX;
             }
