@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     float scal_product;
     float vec_length_c;
     float cosa;
+    float sina;
     float vec_product;
 
     vec_length_a = pow(pow(x, 2) + pow(y, 2) + pow(z, 2), 0.5);
@@ -37,7 +38,8 @@ int main(int argc, char *argv[])
     vec_length_c = pow(pow(x1, 2) + pow(y1, 2) + pow(z1, 2), 0.5);
 
     cosa = scal_product / (vec_length_a * vec_length_c);
-    vec_product = vec_length_a * vec_length_c * cosa;
+    sina = pow((1 - pow(cosa,2)),0.5);
+    vec_product = vec_length_a * vec_length_c * sina;
     cout << "vec_product = " << vec_product <<endl;
 
     return 0;
