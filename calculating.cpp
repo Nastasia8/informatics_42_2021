@@ -118,7 +118,12 @@ void checkIn(float &check){
        try
        {
            check = std::stof(buffer);
-           break;
+           if(check <= 0){
+               std::cout << "Incorrect type of data, try again: " << std::endl;
+           }else{
+               break;
+           }
+           
        }
        catch(const std::exception& e)
        {
