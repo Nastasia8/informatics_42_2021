@@ -10,9 +10,9 @@ using namespace std;
 int main() {
     float y, x, xk, dx;
 
-    x = 1.2;
-    xk = 2.2;
-    dx = 0.2;
+    x = 3.2;
+    xk = 6.2;
+    dx = 0.6;
 
 
     cout << "First task" << endl;
