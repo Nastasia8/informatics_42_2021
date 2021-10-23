@@ -10,6 +10,7 @@ int main()
     int size;
 
     size = sizeof(v) / sizeof(v[6]);
+    cout<< size <<endl;
     cout <<"answer taskA: "<<endl;
     taskAB(v, size);
 
