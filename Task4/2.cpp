@@ -28,7 +28,7 @@ int main(){
     cout << "Enter the interest period (3, 6, or 12): ";
     cin >> Period;
 
-    m = ((n*12) / Period);
+    m = (12 / Period);
 
     answer(P, n, m, I);
 
