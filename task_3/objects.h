@@ -1,0 +1,1 @@
+extern const float value_A, value_B;
