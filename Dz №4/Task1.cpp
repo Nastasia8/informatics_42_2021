@@ -19,30 +19,39 @@ int main()
 
     switch (operation_number)
     {
-    case 1:
+        case 1:
         c = x + y;
         cout << c <<endl;
         break;
 
-    case 2:
+        case 2:
         c = x * y;
         cout << c <<endl;
         break;
 
-    case 3:
-        c = x / y;
-        cout << c <<endl;
+        case 3:
+        if(y == 0)
+            {
+                cout << "Choose y less than or greater than zero" <<endl;
+            } else
+                {
+                    c = x / y;
+                    cout << c <<endl;
+                }
         break;
 
-    case 4:
+        case 4:
         c = pow(x, y);
         cout << c <<endl;
         break;
 
-    case 5:
+        case 5:
         c = x - y;
         cout << c <<endl;
         break;
+
+        default:
+        cout << "choose exactly from the proposed" <<endl;
     }
 return 0;
 }
