@@ -6,6 +6,7 @@ using namespace std;
 
 void descr(float y, float x, float z, float D, float f1, float f2)
 {
+    setlocale (LC_ALL,".866");
 
     cin >> y;
     cin >> x;

@@ -42,6 +42,9 @@ int main(int argc, char *argv[])
             }
             break;
         }
+        default:
+            printf("select something else");
+            break;
     }
     return 0;
 }
