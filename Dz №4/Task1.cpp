@@ -33,11 +33,15 @@ int main()
         if(y == 0)
             {
                 cout << "Choose y less than or greater than zero" <<endl;
-            } else
+
+                cin >> y;
+
+                if(y != 0)
                 {
                     c = x / y;
                     cout << c <<endl;
                 }
+            }
         break;
 
         case 4:
