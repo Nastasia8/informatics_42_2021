@@ -1,1 +1,1 @@
-extern const int degree;
+extern const int Degree;

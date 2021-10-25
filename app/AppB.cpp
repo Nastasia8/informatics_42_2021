@@ -15,7 +15,7 @@ int main(){
 
     cout << "Answer to second task: " << endl;
 
-    answer(degree, xarray, arraylen);
+    answer(Degree, xarray, arraylen);
 
     return 0;
 }

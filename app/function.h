@@ -1,3 +1,3 @@
-void answer(const int degree, float x);
+void answer(const int Degree, float x);
 
-void answer(int degree, float xarray[], int arraylen);
+void answer(int Degree, float xarray[], int arraylen);

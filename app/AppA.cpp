@@ -19,7 +19,7 @@ int main(){
 
     for (x = xbegin; x < xend; x += xtr){
 
-    answer(degree, x);
+    answer(Degree, x);
 
     }
 
