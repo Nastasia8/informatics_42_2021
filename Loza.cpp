@@ -8,11 +8,14 @@ int main(int argc, char *argv[])
     float x = 1;                 // координаты вектора a
     float y = 5;                 // координаты вектора a
     float z = 3;                 // координаты вектора a
+    float x1;                    // координаты единичного вектора
+    float y1;                    // координаты единичного вектора
+    float z1;                    // координаты единичного вектора
     float vec_length_a;
     float vec_length_b;
-    float x1 = 0;                // координаты вектора b
-    float y1 = 0;                // координаты вектора b
-    float z1 = 0;                // координаты вектора b
+    float x2 = 0;                // координаты вектора b
+    float y2 = 0;                // координаты вектора b
+    float z2 = 0;                // координаты вектора b
     float scal_product;
     float vec_length_c;
     float cosa;
@@ -23,19 +26,23 @@ int main(int argc, char *argv[])
     cout << vec_length_a << endl;
 
     vec_length_b = (1, 5, 3) / vec_length_a;
+    x1 = x/vec_length_a;
+    y1 = y/vec_length_a;
+    z1 = z/vec_length_a;
+    cout << x1 << ";" << y1 <<";" << z1 <<endl;
     cout << vec_length_b << endl;
 
-    cout << "enter the coordinate x1" <<endl;             // введите координату
-    cin >> x1;
-    cout << "enter the coordinate y1" <<endl;
-    cin >> y1;
-    cout << "enter the coordinate z1" <<endl;
-    cin >> z1;
+    cout << "enter the coordinate x2" <<endl;             // введите координату
+    cin >> x2;
+    cout << "enter the coordinate y2" <<endl;
+    cin >> y2;
+    cout << "enter the coordinate z2" <<endl;
+    cin >> z2;
 
-    scal_product = x * x1 + y * y1 + z * z1;
+    scal_product = x * x2 + y * y2 + z * z2;
     cout << "c = " << scal_product <<endl;
 
-    vec_length_c = pow(pow(x1, 2) + pow(y1, 2) + pow(z1, 2), 0.5);
+    vec_length_c = pow(pow(x2, 2) + pow(y2, 2) + pow(z2, 2), 0.5);
 
     cosa = scal_product / (vec_length_a * vec_length_c);
     sina = pow((1 - pow(cosa,2)),0.5);
