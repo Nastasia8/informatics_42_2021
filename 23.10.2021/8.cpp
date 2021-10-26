@@ -75,7 +75,7 @@ int main()
 
     for (int i = 0; i < rows; i++)
     {
-        int maxRows = 0;
+        maxRows = 0;
 
         for (int j = 0; j < columns; j++)
         {
