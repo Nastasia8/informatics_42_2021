@@ -3,8 +3,8 @@
 #include <time.h>
 
 void checkIn(int &check);
-void fill(int *arr, int rows, int columns);
-void getInfo(int *arr, int rows, int columns, int &min, int *max_row, int *min_column);
+void fill(int **arr, int rows, int columns);
+void getInfo(int **arr, int rows, int columns, int &min, int *max_row, int *min_column);
 
 int main(int argc, char const *argv[]){
     std::cout << "Enter count of rows and columns for the array:" << std::endl;
@@ -15,41 +15,51 @@ int main(int argc, char const *argv[]){
     int columns;
     checkIn(columns);
 
-    int array[rows][columns];
+    int **array = new int* [rows];
+    for (int i = 0; i < rows; i++){
+    array[i] = new int [columns];
+    }
     int min = 100;
-    int max_row[rows];
-    int min_column[columns];
+    int *max_row = new int [rows];
+    int *min_column = new int[columns];
 
-    fill(&array[0][0], rows, columns);
-    getInfo(&array[0][0], rows, columns, min, &max_row[0], &min_column[0]);
+    fill(array, rows, columns);
+    std::cout << "" << std::endl;
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < columns; j++){
+            std::cout << array[i][j]  << "\t";
+        }
+        std::cout << "" << std::endl;
+    }
+    getInfo(array, rows, columns, min, max_row, min_column);
 
     std::cout << "In generated array min is: " << min << std::endl;
     std::cout << "Max in each rows:" << std::endl;
-    for(int min_c : max_row){
-        std::cout << min_c << "\t";
+    for(int i=0 ; i < rows ; i++){
+        std::cout << max_row[i] << "\t";
     }
     std::cout << "" << std::endl;
     std::cout << "Min in each columns:" << min << std::endl;
-    for(int min_c : min_column){
-        std::cout << min_c << "\t";
+    for(int i=0 ; i < columns ; i++){
+        std::cout << min_column[i] << "\t";
     }
 }
 
-void getInfo(int *arr, int rows, int columns, int &min, int *max_row, int *min_column){
+void getInfo(int **arr, int rows, int columns, int &min, int *max_row, int *min_column){
     for (int i = 0; i < rows; i++){
-        max_row[rows*0 + i] = arr[rows*i + 0];
+        max_row[i] = arr[i][0];
         for (int j = 0; j < columns; j++){
-            if ( arr[rows*i + j] < min){
-                min =  arr[rows*i + j];
+            if ( arr[i][j] < min){
+                min =  arr[i][j];
             }
-            if ( arr[rows*i + j] > max_row[rows*0+j]){
-                max_row[rows*0+j] =  arr[rows*i + j];
+            if ( arr[i][j] > max_row[i]){
+                max_row[i] =  arr[i][j];
             }
             if (i == 0){
-                min_column[columns*0+j] = arr[rows*i + j];
+                min_column[j] = arr[i][j];
             }else{
-                if (min_column[columns*0+j] > arr[rows*i + j]){
-                    min_column[columns*0+j] = arr[rows*i + j];
+                if (min_column[j] > arr[i][j]){
+                    min_column[j] = arr[i][j];
                 }
             }
         }
@@ -57,12 +67,12 @@ void getInfo(int *arr, int rows, int columns, int &min, int *max_row, int *min_c
     }
 }
 
-void fill(int *arr, int rows, int columns){
+void fill(int **arr, int rows, int columns){
     std::srand(static_cast<unsigned int>(time(nullptr)));
     for (int i = 0; i < rows; i++){
         for (int j = 0; j < columns; j++){
-            arr[rows*i + j] = std::rand() % 100;
-            std::cout << arr[rows*i + j]  << "\t";
+            arr[i][j] = std::rand() % 100;
+            std::cout << arr[i]  << "\t";
         }
         std::cout << "" << std::endl;
     }
