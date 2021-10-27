@@ -1,3 +1,11 @@
+# CMakeFiles
+
+CMakeFiles
+Makefile
+CMake*
+cmake*
+!CMakeLists.txt
+
 # Prerequisites
 *.d
 
@@ -30,3 +38,7 @@
 *.exe
 *.out
 *.app
+
+# VsCodeShit
+
+.vscode
