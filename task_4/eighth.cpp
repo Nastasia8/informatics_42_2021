@@ -5,7 +5,7 @@ using namespace std;
 int main() 
 {
     setlocale(0, "rus");
-
+    srand(time(NULL));
     int temp = 0;
     int mas_rows;
     int mas_cols;
