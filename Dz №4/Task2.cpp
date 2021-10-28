@@ -1,36 +1,40 @@
 #include <iostream>
 #include <cmath>
-#include <locale.h>
-
 
 using namespace std;
 
-void sum(int I, float P, int n, int m, float summ)
+float summa(float I, float P, float n, float m1)
 {
-    setlocale (LC_ALL,".866");
-
-    cout << "P" <<endl;
-    cin >> P;
-    cout << "n" <<endl;
-    cin >> n;
-
-    if(m < 12)
-    {
-        summ = P * pow((1 + ((I / 100) / (m / 12))),(m / (12 * n)));
-        cout << "summ =" << summ <<endl;
-        m = m * 2;
-    }
+    return  P * pow((1 + (I/100)/(m1/12)),(m1/12*n));
 }
 
 int main()
 {
     float I = 15;
     float P;
-    int n;
-    int m = 3;
-    float summ = 0;
+    float n;
+    int expression;
 
-    sum(I, P, n, m, summ);
-
+    cout << "P" <<endl;
+    cin >> P;
+    cout << "n" <<endl;
+    cin >> n;
+    cout << "selekt 12 or 6 or 3"<<endl;
+    cin >> expression;
+    switch (expression)
+    {
+        case 12:
+            cout << summa(I, P, n, 12.0) <<endl;
+            break;
+        case 6:
+            cout << summa(I, P, n, 6.0) <<endl;
+            break;
+        case 3:
+            cout << summa(I, P, n, 3.0)  <<endl;
+            break;
+        default:
+            cout << "not" <<endl;
+            break;
+    }
     return 0;
 }
