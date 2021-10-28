@@ -5,22 +5,24 @@ using namespace std;
 
 void sum(int k, int n, int summ)
 {
-    for(k =1; k <= n; k++)
+    for(k; k <= n; k++)
         {
             if (k % 2 == 0)
             {
                 summ = summ + k;
             }
         }
-    cout << summ <<endl;
+    
+    cout<< summ <<endl;
 }
 
 int main ()
 {
-    int k = 1;
+    int k;
     int n;
     int summ = 0;
 
+    cin >> k;
     cin >> n;
 
     sum(k, n, summ);
