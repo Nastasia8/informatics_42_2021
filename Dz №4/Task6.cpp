@@ -7,12 +7,23 @@ void pr(int a, int pro, int n, int b)
 {
     b = a;
 
-    while (b != 0)
+    for(n = 0; b > 0; n++)
     {
-        b = b/10;
-        n = n + 1;
+        b = b / 10;
     }
 
+    if(n == 6)
+        {
+            while (a != 0)
+            {
+                pro = pro * (a%10);
+                a = a / 10;
+            }
+        cout << pro <<endl;
+        } else
+            {
+                cout << "they said a six-digit number" <<endl;
+            }
 }
 int main()
 {
@@ -25,19 +36,5 @@ int main()
     cin >> a;
 
     pr(a, pro, n, b);
-
-    if(n = 6)
-        {
-            while (a != 0)
-            {
-                pro = pro * (a%10);
-                a = a / 10;
-            }
-        } else
-            {
-                cout << "they said a six-digit number" <<endl;
-            }
-    cout << pro <<endl;
-
 return 0;
 }
