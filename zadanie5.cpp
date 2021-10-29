@@ -1,47 +1,72 @@
-#include <iostream>
-#include <cmath>
-
+#include<iostream>
+#include<windows.h>
+#include<limits>
+#include<time.h>
 using namespace std;
 
-double discriminant(float, float, float);
-void root(float, float, float);
+void find_min(int **, int, int, int *);
 
 int main()
 {
-	float y, x, z, discr;
-	cout << "Введите x" << endl;
-	cin >> x;
-	cout << "Введите y" << endl;
-	cin >> y;
-	cout << "Введите z" << endl;
-	cin >> z;
-	discr = discriminant(x, y, z);
-	cout << "Дискриминант равен " << discr << endl;
-	root(discr, x, y);
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+
+	srand(time(0));
+	
+	int i, j;
+	cout << "Введите количество строк массива" << endl;
+	cin >> i;
+	cout << "Введите количество столбцов массива" << endl;
+	cin >> j;
+	
+	int **array = new int*[i];
+	int *max_num = new int[i];
+	
+	for (int m = 0; m < i; m++)
+	{
+		for (int n = 0; n < j; n++)
+		{
+			array[m]= new int[j];
+		}
+	}
+	for (int m = 0; m < i; m++)
+	{
+		for (int n = 0; n < j; n++)
+		{
+			array[m][n]= rand();
+		}
+	}
+	for (int m = 0; m < i; m++)
+	{
+		for (int n = 0; n < j; n++)
+		{
+			cout << array[m][n] << "\t";
+		}
+		cout << "\n";
+	}
+	
+	find_min(array, i, j, max_num);
 	
 	return 0;
 }
 
-double discriminant(float x, float y, float z)
+void find_min(int **array, int rows, int columns, int *max_num)
 {
-	return pow(y, 2.0) - 4 * x * z;
-}
-
-void root(float discr, float x, float y)
-{
-	if (discr < 0)
+	for (int i = 0; i < rows; i++)
 	{
-		cout << "Корней нет" << endl;
+		int min = numeric_limits<int>::max();
+		for (int j = 0; j < columns; j++)
+		{
+			if(min > array[i][j])
+			{
+				min = array[i][j];
+			}
+		}
+		max_num[i] = min;
 	}
-	if (discr == 0)
+	
+	for (int i = 0; i < rows; i++)
 	{
-		float rt = (-y) / (2 * x);
-		cout << "f1 = " << rt << endl;
-	}
-	if (discr > 0)
-	{
-		float rt_1 = ((-y) + pow(discr, 1.0 / 2.0)) / (2 * x);
-		float rt_2 = ((-y) - pow(discr, 1.0 / 2.0)) / (2 * x);
-		cout << "f1 = " << rt_1 << endl << "f2 = " << rt_2 << endl;
+		cout << "Минимальный элемент " << i << " строки равен " << max_num[i] << endl;
 	}
 }

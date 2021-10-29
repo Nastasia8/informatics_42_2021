@@ -1,25 +1,23 @@
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<cmath>
+#include<windows.h>
 using namespace std;
 
-double summa(double, double, double, double);
-
-const double I = 15;
+void swap(float*, float*);
 
 int main()
 {
-	double P, n, m;
-	cout << "Enter deposit" << endl;
-	cin >> P;
-	cout << "Enter period" << endl;
-	cin >> n;
-	cout << "Enter the number of charges per year" << endl;
-	cin >> m;
-	cout  << summa(P, n, I, m) << endl;	
+	float x, y;
+	cin >> x;
+	cin >> y;
+	swap(&x, &y);
+	cout << x << " " << y << endl;
 	return 0;
 }
 
-double summa(double P, double n, double I, double m)
+void swap(float *x, float *y)
 {
-	return P * (pow(1 + (I / 100 / m / 12), m / 12 * n));
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }

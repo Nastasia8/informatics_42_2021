@@ -1,32 +1,57 @@
-#include <iostream>
-#include <cmath>
-#include <windows.h>
-
+#include<iostream>
+#include<windows.h>
+#include<limits>
+#include<time.h>
 using namespace std;
 
-int sum(int);
+void fill_array(int*, int);
+void show_array(int*, int);
+void find_min(int*, int);
 
 int main()
 {
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);
-
+	
+	srand(time(0));
+	
 	int k;
-	cout << "Введите диапазон" << endl;
+	cout << "Введите размер массива" << endl;
 	cin >> k;
-	cout << sum(k) << endl;
+	int *array= new int[k];
+	
+	fill_array(array, k);
+	show_array(array, k);
+	find_min(array, k);
+	
+	return 0;
 }
 
-int sum(int k)
+void fill_array(int* array, int size)
 {
-	int summa = 0;
-	while(k > 0)
+	for (int *i = array; i != array + size; i++)
 	{
-		if(k % 2 == 0)
-		{
-			summa += k;
-		}
-		k--;
+		*i = rand();
 	}
-	return summa;
+}
+
+void show_array(int* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << *(array + i) << "\t";
+	}
+}
+
+void find_min(int* array, int size)
+{
+	int min = numeric_limits<int>::max();
+	for(int *i = array; i != array + size; i++)
+	{
+		if (min > *i)
+		{
+			min = *i;
+		}
+	}
+	cout << "Минимальный элемент равен " << min << endl;
 }
