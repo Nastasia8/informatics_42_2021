@@ -1,1 +1,0 @@
-extern const double a, b, xn, xk, dx;
