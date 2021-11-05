@@ -7,15 +7,13 @@ int main ()
 {
     int i;
     int j;
-    int k = 0;
     int h;
     int g;
 
-    float a[i][j];
-    float b[k];
-
     cin >> h;
     cin >> g;
+    float a[h][g];
+    float max;
 
     srand(time(NULL));
 
@@ -23,24 +21,28 @@ int main ()
     {
         for(j=0; j<g; j++)
         {
-            a[i][j] = rand();
-            cout << a[i][j]<< ' ';
+            a[i][j] = -50 + rand() % 100;
+            cout << a[i][j]<< '\t';
         }
         cout << endl;
     }
-
-    for(i=0; i<h; i++)
+    cout << endl;
+    i = 0;
+    while(i < h) 
     {
-        for(j=0; j<g; j++)
+        j=0;
+        max = a[i][j];
+        while(j < g)
         {
-            if(a[i][j] < a[i][j+1])
+            if(a[i][j] > max)
             {
-                b[k] = a[i][j];
-                k++;
-                cout << b[k] << ' ';
+                max = a[i][j];
             }
+            j++;
         }
+        cout << max << ' ';
+        i++;
     }
-
-return 0;
+    cout << endl;
+    return 0;
 }
