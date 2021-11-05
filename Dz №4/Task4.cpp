@@ -12,7 +12,6 @@ void sum(int k, int n, int summ)
                 summ = summ + k;
             }
         }
-    
     cout<< summ <<endl;
 }
 
