@@ -35,12 +35,23 @@ int main(){
             break;
 
         case 4:
+            if(y == 0){
+
+                cout << "Mistake. Division by 0";
+                exit(0);
+
+            }
+
             cout << "x / y = " << (x / y) << endl;
             break;
 
         case 5:
             cout << "x^y = " << pow(x, y) << endl;
-            break;   
+            break; 
+
+        default:
+            cout << "Invalid value";
+            exit(0);
     }
 
 

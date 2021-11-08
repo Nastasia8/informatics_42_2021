@@ -43,23 +43,25 @@ void answer(float x, float y, float z){
         cout << "No roots" << endl;
     }
 
-    if(D == 0){
+    else{
 
-        answer = ((-y) / (2 * x));
+        if(D == 0){
 
-        cout << "Roots: " << answer << endl;
+            answer = ((-y) / (2 * x));
 
-    }
+            cout << "Roots: " << answer << endl;
 
-    if(D > 0){
+        }
 
-        answer = (((-y) + (sqrt(D))) / (2 * x));
+        else{
 
-        cout << "Roots: " << (((-y) + (sqrt(D))) / (2 * x)) << " ; " ;
+            answer = (((-y) + (sqrt(D))) / (2 * x));
 
-        answer = (((-y) - (sqrt(D))) / (2 * x));
+            cout << "Roots: " << (((-y) + (sqrt(D))) / (2 * x)) << " ; " ;
 
-        cout << answer << endl;
+            answer = (((-y) - (sqrt(D))) / (2 * x));
 
+            cout << answer << endl;
+        }
     }
 }

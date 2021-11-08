@@ -4,17 +4,11 @@
 
 //functions for calculating perimeter - "p" and area(square) - "a"
 
-float pcircle(float radius);
+void answer(float radius);
 
-float acircle(float radius);
+void answer(float side1, float side2, float littlebase, float bigbase);
 
-float ptrapezoid(float side1, float side2, float littlebase, float bigbase);
-
-float atrapezoid(float side1, float side2, float littlebase, float bigbase);
-
-float psquare(float side);
-
-float asquare(float side);
+void answer(float side, int overload);
 
 
 
@@ -22,6 +16,8 @@ float asquare(float side);
 int main(){
 
 int choise = 0;
+
+int overload = 0; //Variable for overload
 
 std::cout << "This program calculates the perimeter and area of ​​various shapes" << std::endl;
 
@@ -36,8 +32,8 @@ switch(choise){
         
         std::cout << "Enter radius of the circle: ";
         std::cin >> radius;
-
-        std::cout << "Perimeter and area(square) of the circle: " << pcircle(radius) << "; " << acircle(radius);
+        
+        answer(radius);
 
         break;
     
@@ -57,7 +53,7 @@ switch(choise){
         std::cout << "Enter big base of the trapezoid: ";
         std::cin >> bigbase;
 
-        std::cout << "Perimeter and area(square) of the trapezoid: "<< ptrapezoid(side1, side2, littlebase, bigbase) << "; " << atrapezoid(side1, side2, littlebase, bigbase);
+        answer(side1, side2, littlebase, bigbase);
 
         break;
 
@@ -68,7 +64,7 @@ switch(choise){
         std::cout << "Enter side of the square: ";
         std::cin >> side;
 
-        std::cout << "Perimeter and area of the square: " << psquare(side) << "; " << asquare(side);
+        answer(side, overload);
 
         break;
 }
@@ -80,66 +76,52 @@ switch(choise){
 
 
 
-float pcircle (float radius){
+void answer(float radius){
 
     float perimeter;
     
     float Pi = 3.14;
 
     perimeter = (2*Pi*radius);
-
-    return perimeter;
-}
-
-float acircle (float radius){
     
     float area;
-    
-    float Pi = 3.14;
 
     area = (Pi*(pow(radius, 2)));
 
-    return area;
+    std::cout << "Perimeter of the circle: " << perimeter << ". " << "Area(square) of the circle: " << area << std::endl;
+
 }
 
 
 
 
-float ptrapezoid(float side1, float side2, float littlebase, float bigbase){
+void answer(float side1, float side2, float littlebase, float bigbase){
 
     float perimeter;
 
     perimeter = (side1+side2+littlebase+bigbase);
 
-    return perimeter;
-}
-
-float atrapezoid(float side1, float side2, float littlebase, float bigbase){
-
     float area;
     // We use the Pythagorean theorem to find the hypotenuse (the height of the trapezoid) and then find the area with the formula of the half-sum of bases per height
     area = (   (sqrt(  (pow(side1, 2))  -  (pow(((bigbase-littlebase)/2), 2)) ))   *   ( (bigbase+littlebase)/2 )    );
 
-    return area;
+    std::cout << "Perimeter of the trapezoid: " << perimeter << ". " << "Area(square) of the trapezoid: " << area << std::endl;
+
 }
+    
 
 
 
-
-float psquare(float side){
+void answer(float side, int overload){
 
     float perimeter;
 
     perimeter = (4*side);
 
-    return perimeter;
-}
-
-float asquare(float side){
-
     float area;
 
     area = (pow(side, 2));
 
-    return area;
+    std::cout << "Perimeter of the square: " << perimeter << ". " << "Area(square) of the square: " << area << std::endl;
+
 }

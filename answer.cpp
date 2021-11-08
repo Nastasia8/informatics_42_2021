@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     float x = 0;
-    long double answer;
+    float answer;
     cout << "Answer to question A" << endl;
     for ( x = 0.11; x <= 0.36; x += 0.05 )
     {
