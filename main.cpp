@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cmath>
 
+const float a = 2.0;
+const float b = 1.1;
+
 int main(int args, char* argv[]) {
     using namespace std;
-
-    const float a = 2.0;
-    const float b = 1.1;
 
     float x = 0.08;
     float x_end = 1.08;
