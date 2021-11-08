@@ -12,7 +12,7 @@ void calc(int x, int y, int z){
         f2 = (-y - sqrt(D))/2*x;
         cout <<"Korni -> " << f1 <<" "<< f2;
 
-     } else if (D=0) {
+     } else if (D==0) {
         f1 = -y/2*x;
         cout <<"Koren -> " << f1 ;
 

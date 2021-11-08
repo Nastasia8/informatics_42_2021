@@ -6,13 +6,19 @@ using namespace std;
 
 
 void calc(int P, int n, int vibor)
-{
+{   
+    if (vibor!=0){
     int month = n*12;
     float m = month/vibor;
     float I = 15;
     
     int S = (P * (pow((1 +((I/100) / (m/12))), ((m/12) * n))));
     cout <<"Summa vklada = "<<S;
+    } else {
+    
+        cout << "x3"<<endl;
+
+    }
 
 }
 
@@ -42,6 +48,10 @@ int main()
         case 3:
             cout<<"You selected 3"<<endl;
             vibor = 12;
+            break;
+        default:
+            cout<<"This operation does not exist"<<endl;
+            vibor = 0;
             break;
     }
 

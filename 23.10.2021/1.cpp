@@ -5,19 +5,21 @@ using namespace std;
 
 
 void calc(int op,int x, int y){
-   if(op=1) {
+   if(op==1) {
    
     cout <<"Summ = "<< x+y<<endl;
-   } else if (op=2) {
+   } else if (op==2) {
 
     cout <<"Minus = "<< x-y<<endl;
-    } else if (op=3){
+    } else if (op==3){
 
     cout <<"Umn = "<< x*y<<endl;
-    } else if (op=4){
+    } else if (op==4){
     cout <<"Del = "<<x/y<<endl;
-    } else if(op=5){
+    } else if(op==5){
     cout <<"Vos = "<<pow(x,y)<<endl;
+    } else {
+    cout<<"This operation does not exist"<<endl;
     }
 
 }
