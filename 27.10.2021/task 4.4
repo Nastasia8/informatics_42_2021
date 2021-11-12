@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+void calc(int x, int y){
+   int sum = 0;
+   for (int i = x; i<=y;i++){
+       if(i%2 == 0) {
+           sum+=i;
+       }
+
+   }
+   cout <<"Summ = "<<sum<<endl;
+
+}
+
+int main(){
+    cout<<"Enter the first numver and the last one"<<endl;
+	int x,y;
+    cin >> x>> y;
+    calc(x,y);
+
+}
+//Alexandr Butusov helped
