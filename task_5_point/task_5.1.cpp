@@ -52,7 +52,7 @@ void finde(float start, float end, const float accuracy){
                         << std::setw( 15 ) << "f(c)"
                         << std::setw( 15 ) << "f(a)*f(c)"
                         << std::endl; 
-    while (fabs(start - end) > accuracy){
+    while (fabs(start - end) >= accuracy){
         half = (start+end)/2;
         fa = function(start);
         fc = function(half);
@@ -74,5 +74,20 @@ void finde(float start, float end, const float accuracy){
         }
         count++;
     }
+    half = (start+end)/2;
+        fa = function(start);
+        fc = function(half);
+        fproduct = fa*fc;
+        std::cout       << std::setw(5) << count
+                        << std::setw( 15 ) << start
+                        << std::setw( 15 ) << end
+                        << std::setw( 15 ) << half
+                        << std::setw( 15 ) << fabs(start - end)
+                        << std::setw( 15 ) << fa
+                        << std::setw( 15 ) << fc
+                        << std::setw( 15 ) << fproduct
+                        << std::endl; 
+    std::cout << "Root of equation is " << (start+end)/2 << " and was received by " << count << " iterations" << std::endl;
+    
     
 }
