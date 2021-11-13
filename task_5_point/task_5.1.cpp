@@ -43,7 +43,8 @@ void finde(float start, float end, const float accuracy){
     float half;
     double fa, fc, fproduct;
     int count = 1;
-    std::cout << "Iteration " << std::setw( 10 ) << "a" 
+    std::cout << "Iteration "
+                        << std::setw( 10 ) << "a" 
                         << std::setw( 15 ) << "b"
                         << std::setw( 15 ) << "c"
                         << std::setw( 15 ) << "|a-b|"
@@ -56,7 +57,8 @@ void finde(float start, float end, const float accuracy){
         fa = function(start);
         fc = function(half);
         fproduct = fa*fc;
-        std::cout << std::setw(5) << count << std::setw( 15 ) << start
+        std::cout       << std::setw(5) << count
+                        << std::setw( 15 ) << start
                         << std::setw( 15 ) << end
                         << std::setw( 15 ) << half
                         << std::setw( 15 ) << fabs(start - end)
