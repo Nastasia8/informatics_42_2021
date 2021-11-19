@@ -2,8 +2,11 @@
 #include <windows.h>
 #include <math.h>
 #include <iomanip>
-using namespace std;
-float func(float x);
+using std::cin;
+using std::cout;
+using std::endl;
+using std::setw;
+
 int main(){
 SetConsoleCP(CP_UTF8);
 SetConsoleOutputCP(CP_UTF8);
