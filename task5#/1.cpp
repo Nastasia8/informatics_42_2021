@@ -91,7 +91,6 @@ SetConsoleOutputCP(CP_UTF8);
         << setw( 14 ) << fa_fc
         << endl;
 		}
-		
 	}
    cout <<"Корень уравнения = " << c << endl;
     cout <<"Количество шагов = "<< (q-1) <<endl;
