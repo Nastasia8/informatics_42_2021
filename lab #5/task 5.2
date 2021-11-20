@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void place(float *x, float *y, float *z);
+
+int main()
+{
+    float x, y, z;
+    cout<<"Type x, y, z"<<endl;
+    cin>> x;
+    cin>> y;
+    cin>> z;
+    place(&x, &y, &z);
+    cout<<" "<<endl;
+    cout<<"Now it's changed"<<endl;
+    cout<<x<<"    "<<y<<"    "<<z<<endl;
+    return 0;
+}
+
+void place(float *x, float *y, float *z)
+{
+    float o = *x;
+    *x=*y;
+    *y=*z;
+    *z=o;
+}
+
+//Alexey Belyakov helped
