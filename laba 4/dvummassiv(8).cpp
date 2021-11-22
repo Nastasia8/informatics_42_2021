@@ -10,12 +10,13 @@ int main ()
     int h;
     int g;
 
-    cin >> h;
-    cin >> g;
-    float a[h][g];
+    cin >> h; // строки
+    cin >> g; // столбцы
+    float a[h][g]; // многомерный массив (двухмерный)
     float max;
+    float min;
 
-    srand(time(NULL));
+    srand(time(NULL)); // выводит рандом числа
 
     for(i=0; i<h; i++)
     {
@@ -44,5 +45,23 @@ int main ()
         i++;
     }
     cout << endl;
+
+    j=0;
+
+    while (j < g) 
+    {
+        i=0;
+        min = a[i][j];
+        while (i < h)
+        {
+            if(a[i][j] < min)
+            {
+                min = a[i][j];
+            }
+            i++;
+        }
+        cout << min << ' ';
+        j++;
+    }
     return 0;
 }
