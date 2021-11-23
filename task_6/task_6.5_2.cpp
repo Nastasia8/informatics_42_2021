@@ -33,9 +33,9 @@ int find(int input_1, int input_2, int input_3){
     while (i < min / ans){
         if((input_1 % (i + 1) == 0) && (input_2 % (i + 1) == 0) && (input_3 % (i + 1) == 0)){
             ans *= (i+1);
-            input_1 = input_1 / ans;
-            input_2 = input_2 / ans;
-            input_3 = input_3 / ans;
+            input_1 = input_1 / (i+1);
+            input_2 = input_2 / (i+1);
+            input_3 = input_3 / (i+1);
         }else{
             i++;
         }
