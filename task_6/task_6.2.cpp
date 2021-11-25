@@ -27,7 +27,30 @@ std::string convert(int input, int num_sys){
     int buf;
     buf = input;
     while (buf != 0){
-        ans = std::to_string(buf % num_sys);
+            switch (buf % num_sys)
+            {
+            case 10:
+                ans = "A";
+                break;
+            case 11:
+                ans = "B";
+                break;
+            case 12:
+                ans = "C";
+                break;
+            case 13:
+                ans = "D";
+                break;
+            case 14:
+                ans = "E";
+                break;
+            case 15:
+                ans = "F";
+                break;          
+            default:
+                ans = std::to_string(buf % num_sys);
+                break;
+            }
         ans += buffer;
         buf = buf / num_sys;
         buffer = ans;
