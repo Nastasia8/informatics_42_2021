@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cmath>
-
-using namespace std;
+#include <windows.h>
+using std::cout;
+using std::endl;
+using std::cin;
 
 void translating_numbers(int);
 
