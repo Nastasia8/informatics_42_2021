@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+ 
+int f(int number)
+{
+    if (number == 0)
+        return 0;
+    if (number == 1)
+        return 3;
+    if (number==2)
+        return 5;
+    return f(number-1) + f(number-2) + f(number-3);
+}
+
+int main()
+{
+    for (int count=0; count < 15; ++count)
+        cout << f(count) << "   ";
+ 
+    return 0;
+}
+
+//или надо было писать в 17 строке "count<18"?
