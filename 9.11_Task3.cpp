@@ -8,19 +8,19 @@ using namespace std;
 
 int main(){
 SetConsoleOutputCP(1251);
-int n;
-cout<<"n = ";
-cin>>n;
-double *M;
-    M = new double[n];
+int size;
+cout<<"size = ";
+cin>>size;
+double *Array;
+    Array = new double[size];
 srand(time(0));
 int minimum = 200;
 int index = 0;
-for(int i = 0; i<n; i++){
-    M[i] = rand()%100;
-    cout<<i+1<<". "<<M[i]<<endl;
-    if (M[i] < minimum) {
-        minimum = M[i];
+for(int i = 0; i<size; i++){
+    Array[i] = rand()%100;
+    cout<<i+1<<". "<<Array[i]<<endl;
+    if (Array[i] < minimum) {
+        minimum = Array[i];
         index = i;
     }
 }
