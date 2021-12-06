@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+long double f(int r) 
+{
+    if (r > 0)
+     {
+        return r * f(r - 1);
+    }
+    else
+     {
+        return 0;
+    }
+    if (r == 0)
+    {
+        return 1;
+    }
+}
+
+int main()
+{
+    int n, sum = 0;
+    cin >> n;
+    for (int r = 1; k <= n; r++) 
+    {
+        sum += -1 * r * ((5 - r) / f(r));
+    }
+    cout << sum;
+}
