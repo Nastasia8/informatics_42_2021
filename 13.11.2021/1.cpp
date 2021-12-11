@@ -18,7 +18,7 @@ int main()
     for(x=a; x<=b; x+=h)
     {
         double f1= x*x - sin(5*x);
-        double f2 = (x+1)*(x+1) - sin(5*(x+1));
+        double f2 = (x+h)*(x+h) - sin(5*(x+h));
         if((((f1 > 0) && (f2 < 0)) || ((f1 < 0) && (f2 > 0)) ) && (t == 0))
         {
             otr1 = x;
