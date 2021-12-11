@@ -1,4 +1,3 @@
-// Извините за такой объём, хотелось получить опыт работы и решения проблем с большими программами)
 
 #include <iostream>
 #include <vector>
@@ -486,6 +485,8 @@ int main(){
     }
 
     cout << "b) NOD for three numbers: "<< answer << endl;
+
+    cout << "End" << endl;
 
     return 0;
 }
