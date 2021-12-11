@@ -5,10 +5,19 @@ using std:: cout;
 using std:: endl;
 using std:: string;
 
+
+
+
+// Честно говоря мне помогал выполнять эту работу Виталя, мы с ним созванивались по дс и он объяснял мне это, так как я задание не очень понял
+
+
+
+
+//Это тип перечисления констант, то есть 1 константа - 0, 2 константа - 1; честно я посмотрел у других и взял тоже, так как это удобнее
 enum CarState
 {
     OLD,
-    NEW_C,
+    NEW,
     
 };
 
@@ -16,16 +25,19 @@ class Car
 {
 public:
 
+    // Возвращает состояние машины: новое или старое (New or Old)
     CarState GetState()
     {
         return State;
     }
 
+    // Возврат нашего года
     int GetYear()
     {
         return year;
     }
 
+    // Устанавливаем и проверяем верный ввод года 
     void SetYear(int year)
     {
         if (year < 1886)
@@ -41,13 +53,15 @@ public:
             this->year = year;
         }
     }
-
+    
+    // Устанавливаем состояние нашей машины
     void SetState(CarState State)
     {
         this->State = State;
     }
 
-    void Set_Def_Data()
+    // Дефолтное значение
+    void Set_Default()
     {
         this->brand = ("RENO");
         this->model = ("LOGAN");
@@ -56,7 +70,8 @@ public:
         this->k++;
     }
 
-    void  Set_Castom_Data(string brand, string model, int year, CarState State)
+    // Эта функция принимает наши значения
+    void  Set_Take_Values(string brand, string model, int year, CarState State)
     {
         this->brand = brand;
         this->model = model;
@@ -65,11 +80,12 @@ public:
         this->k++;
     }
 
-    void Show()
+    // Функция отображения 
+    void Output_to_the_Screen()
     {
         cout << "Бренд: " << this->brand << endl;
         cout << "Модель: " << this->model << endl;
-        if (this->GetState()==CarState::NEW_C)
+        if (this->GetState()==CarState::NEW)
         {
             cout << "Cостояние: новое" << endl;
         }
@@ -81,7 +97,8 @@ public:
         cout << "Год выпуска: " << this->year << endl;
         cout << "Создаются экземпляры класса: " << this->k << endl << endl;
     }
-
+    
+    // это приватные значения, мы можем ими пользоваться только внутри класса, а снаружи нет 
 private:
     enum CarState State;
     string brand;
@@ -99,11 +116,11 @@ SetConsoleOutputCP(CP_UTF8);
     Car FirstCar;
     Car SecondCar;
     Car ThirdCar;
-    FirstCar.Set_Castom_Data("MERCERDES", "A-класс", 2013, CarState::OLD);
-    SecondCar.Set_Castom_Data("MERCERDES", "C-класс", 2021, CarState::NEW_C);
-    ThirdCar.Set_Def_Data();
-    FirstCar.Show();
-    SecondCar.Show();
-    ThirdCar.Show();
+    FirstCar.Set_Take_Values("MERCERDES", "A-класс", 2013, CarState::OLD);
+    SecondCar.Set_Take_Values("MERCERDES", "C-класс", 2021, CarState::NEW);
+    ThirdCar.Set_Default();
+    FirstCar.Output_to_the_Screen();
+    SecondCar.Output_to_the_Screen();
+    ThirdCar.Output_to_the_Screen();
     return 0;
 }
