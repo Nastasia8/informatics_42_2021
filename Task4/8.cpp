@@ -39,7 +39,7 @@ int main(){
     for(r = 0; r < rows; r++ ){
         for(c =0; c < columns; c++){
 
-            array[r][c] = rand();
+            array[r][c] = rand()%999999;
 
             cout << array[r][c] << endl;
 
