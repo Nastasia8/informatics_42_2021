@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+void calc(int x, int y, int z){
+    float x1,x2;
+    float D = y*y - 4*x*z;
+    if (D>0) {
+        x1 = (-y + sqrt(D))/2*x;
+        x2 = (-y - sqrt(D))/2*x;
+        cout <<"Korni -> " <<x1 <<" "<< x2;
+		 }
+	  else if (D==0) {
+        x1 = -y/2*x;
+        cout <<"Koren -> " << x1 ;
+
+     } else {
+        cout<<"Korney net";
+     }
+
+}
+
+
+int main(){
+	cout<<"Type x, y and z"<<endl;
+    int x,y,z;
+    cin >> x>> y >> z;
+    calc(x,y,z);
+ 
+
+
+}
+
+//AlexandrButusov helped

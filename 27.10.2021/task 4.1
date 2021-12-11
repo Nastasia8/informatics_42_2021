@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+void calc(int numoper,int x, int y){
+   if(numoper==1) {
+   
+    cout <<"Summ = "<< x+y<<endl;
+   } else if (numoper==2) {
+
+    cout <<"Minus = "<< x-y<<endl;
+    } else if (numoper==3){
+
+    cout <<"Umn = "<< x*y<<endl;
+    } else if (numoper==4){
+    cout <<"Del = "<<x/y<<endl;
+    } else if(numoper==5){
+    cout <<"Stepen = "<<pow(x,y)<<endl;
+    } else {
+    cout<<"This operation does not exist"<<endl;
+    }
+
+}
+int main(){
+
+    int numoper,x,y;
+    cout <<"Type"<<endl;;
+    cout <<"'1'for summ"<<endl;;
+    cout <<"'2' for minus"<<endl;
+    cout <<"'3' for umnojenie"<<endl;
+    cout <<"'4' for delenie"<<endl;
+    cout <<"'5' for stepen"<<endl;
+    cout <<"Don't forget to write x and y after choosing"<<endl;
+     cout<<"System won't solve operation '4' if y = 0"<<endl;
+    cout <<"Your choice is ";
+    cin >> numoper >> x >> y;
+
+    calc(numoper,x,y);
+}
+
+//Alexandr Butusov helped me

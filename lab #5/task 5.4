@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+void fill(int* p, int k)
+{
+	for (int i=0; i<k; i++)
+	{
+	p[i] = rand() % 100;
+}
+}
+
+void show(int* p, int k)
+{
+	for (int i=0; i<k;i++)
+	{
+		cout<<p[i]<<"\t";
+	}
+}
+
+
+void min(int* p, int k, int minim)
+{
+	for (int i=0; i<k;i++)
+	{
+		if(p[i]<minim)
+		{
+			minim=p[i];
+		}
+	}
+	cout<<"Minimal number is "<<minim<<endl;
+}
+int main()
+{
+    srand(time(NULL));
+    int minim = 10000;
+    int k;
+    cout << "Type number = " << endl;
+    cin >> k;
+    cout << endl;
+    int *p = new int [k];
+
+    fill(p, k);
+    show(p, k);
+    min(p, k, minim);
+   	delete p;
+}
+
+//Alexandr Butusov helped

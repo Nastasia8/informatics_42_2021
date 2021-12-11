@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+void calc(int P, int n, int Vibor)
+{   
+    if (Vibor!=0){
+    int month = n*12;
+    float m = month/Vibor;
+    float I = 15;
+    int S = (P * (pow((1 +((I/100) / (m/12))), ((m/12) * n))));
+    cout <<"Summa vklada = "<<S;
+    }
+
+}
+
+
+int main()
+{
+    int P,n,Vibor;
+    cout << "Enter P(rubles),n(years) = ";
+    cin >> P >> n;
+    cout <<"Choose number of months"<<endl;
+    cout <<"3"<<endl;
+    cout <<"6"<<endl;
+    cout <<"12"<<endl;
+    cin >> Vibor;
+
+    switch(Vibor)
+    {
+        case 3:
+            cout<<"You selected 3 months"<<endl;
+            Vibor = 3;
+            break;
+        case 6:
+            cout<<"You selected 6 months"<<endl;
+            Vibor = 6;
+            break;
+        case 12:
+            cout<<"You selected 12 months"<<endl;
+            Vibor = 12;
+            break;
+        default:
+            cout<<"This operation does not exist"<<endl;
+            Vibor = 0;
+            break;
+    }
+
+    calc(P,n,Vibor);
+    
+
+}
+
+//Alexander Butusov helped
