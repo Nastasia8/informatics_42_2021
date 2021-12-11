@@ -17,9 +17,10 @@ int main()
     double xi2yi = 0;
     double linQ = 0;
     double quadroQ = 0;
+
     cout << "xi" << "\t" << "yi" << "\t" << "xi2" << "\t" << "xi3" << "\t" << "xi4" << "\t" << "xiyi" << "\t" << "xi2yi" << endl;
     for(int i = 0; i < length; i++)
-    {   
+    {
         xi += x[i];
         yi += y[i];
         xi2 += x[i] * x[i];
@@ -30,8 +31,10 @@ int main()
 
         cout << x[i] << "\t" << y[i] << "\t" << x[i] * x[i] << "\t" << x[i] * x[i] * x[i] << "\t" << x[i] * x[i] * x[i] * x[i] << "\t" << x[i] * y[i] << "\t" << x[i] * x[i] * y[i] << endl;
     }
+
     cout << "Sum xi" << "\t" <<"Sum yi" << "\t" << "Sum xi2" << "\t" << "Sum xi3" << "\t" << "Sum xi4" << "\t" << "Sum xiyi" << "\t" << "Sum xi2yi" << endl;
     cout << xi << "\t" << yi << "\t" << xi2 << "\t" << xi3 << "\t" << xi4 << "\t" << xiyi << "\t" << xi2yi << endl;
+
     double linb = (xiyi * xi - xi2*yi) / (xi * xi - xi2 * length);
     double lina = (yi - linb * length) / xi;
     double delta0 = (xi4 * xi2 * length + xi3 * xi * xi2 + xi2 * xi3 * xi - xi2 * xi2 * xi2 - xi4 * xi * xi - xi3 * xi3 * length);
@@ -41,6 +44,7 @@ int main()
     double quadroa = delta1 / delta0;
     double quadrob = delta2 / delta0;
     double quadroc = delta3 / delta0;
+
     for(int i = 0; i < length; i++)
     {
         linQ += pow((y[i] - (lina * x[i]) - linb), 2);
