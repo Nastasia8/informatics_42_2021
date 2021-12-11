@@ -4,38 +4,38 @@
 using namespace std;
 
 
-void calc(int numoper,int x, int y){
+void calc(int numoper,int x, int y){ //объявление функции и переменных
    if(numoper==1) {
    
-    cout <<"Summ = "<< x+y<<endl;
+    cout <<"Summ = "<< x+y<<endl; //если номер операции равен 1, то выводим сумму Х и Y
    } else if (numoper==2) {
 
-    cout <<"Minus = "<< x-y<<endl;
+    cout <<"Minus = "<< x-y<<endl; //если номер операции равен 2, то выводим разность Х и Y
     } else if (numoper==3){
 
-    cout <<"Umn = "<< x*y<<endl;
+    cout <<"Umn = "<< x*y<<endl; //если номер операции равен 3, то выводим произведение Х и Y
     } else if (numoper==4){
-    cout <<"Del = "<<x/y<<endl;
+    cout <<"Del = "<<x/y<<endl; //если номер операции равен 4, то выводим частное Х и Y
     } else if(numoper==5){
-    cout <<"Stepen = "<<pow(x,y)<<endl;
+    cout <<"Stepen = "<<pow(x,y)<<endl; //если номер операции равен 5, то выводим Х в степени Y
     } else {
-    cout<<"This operation does not exist"<<endl;
+    cout<<"This operation does not exist"<<endl; //если номер операции равен любому другому числу, то выводим ошибку
     }
 
 }
 int main(){
 
-    int numoper,x,y;
-    cout <<"Type"<<endl;;
-    cout <<"'1'for summ"<<endl;;
-    cout <<"'2' for minus"<<endl;
-    cout <<"'3' for umnojenie"<<endl;
-    cout <<"'4' for delenie"<<endl;
-    cout <<"'5' for stepen"<<endl;
+    int numoper,x,y; //объявляем номер операции, Х и Y
+    cout <<"Type"<<endl;
+    cout <<"'1'for summ"<<endl; //операция суммы
+    cout <<"'2' for minus"<<endl; //операция вычитания
+    cout <<"'3' for umnojenie"<<endl; //операция умножения
+    cout <<"'4' for delenie"<<endl; //операция деления
+    cout <<"'5' for stepen"<<endl; //возведение в степень
     cout <<"Don't forget to write x and y after choosing"<<endl;
-     cout<<"System won't solve operation '4' if y = 0"<<endl;
+    cout<<"System won't solve operation '4' if y = 0"<<endl;
     cout <<"Your choice is ";
-    cin >> numoper >> x >> y;
+    cin >> numoper >> x >> y; //вводим номер операции, значение Х и Y
 
     calc(numoper,x,y);
 }
