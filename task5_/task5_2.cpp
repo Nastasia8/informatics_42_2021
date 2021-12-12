@@ -23,12 +23,25 @@ std::list<float*> inputHandler() {
 }
 
 int main(int agrs, char** argv) {
-    std::list <float*> data = inputHandler();
-    auto iter = data.begin();
-    while (iter != data.end()) {
-        std::cout << (*iter)[0] << std::endl << (*iter)[1] << std::endl;
+    std::list <float*> values = inputHandler();
+    std::list <float> xInSquare;
+    std::list <float> xProdY;
+    float sumX = 0;
+    float sumY = 0;
+    float sumXInSquare = 0;
+    float sumXProdY = 0;
+    auto iter = values.begin();
+    while (iter != values.end()) {
+        xInSquare.push_back((*iter)[0]*(*iter)[0]);
+        xProdY.push_back((*iter)[0]*(*iter)[1]);
+        sumX += (*iter)[0];
+        sumXInSquare += (*iter)[0]*(*iter)[0];
+        sumY += (*iter)[1];
+        sumXProdY += (*iter)[1];
         iter++;
     }
+    std::cout << sumX << '\n' << sumY << '\n' << sumXProdY << '\n' << sumXInSquare;
+
 
     return 0;
 }
