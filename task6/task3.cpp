@@ -29,6 +29,10 @@ int functionSubtraction(int x, int y) {
     }
 }
 
+int functionNOK(int x, int y) {
+    return (x * y) / functionDivision(x, y); 
+} 
+
 int main(int args, char** argv) {
     int x, y;
     
@@ -38,6 +42,7 @@ int main(int args, char** argv) {
     std::cin >> y;
     std::cout << "При помощи деления. НОД(" << x << ", " << y << ") = "  << functionDivision(x, y) << std::endl;
     std::cout << "При помощи вычитания. НОД(" << x << ", " << y << ") = "  << functionSubtraction(x, y) << std::endl;
+    std::cout << "НОК(" << x << ", " << y << ") = "  << functionNOK(x, y) << std::endl;
 
     return 0;
 }
