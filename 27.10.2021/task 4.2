@@ -3,14 +3,14 @@
 using namespace std;
 
 
-void calc(int P, int n, int Vibor)
+void calc(int P, int n, int Vibor) //ввод функции счета, использование P, n, Vibor
 {   
     if (Vibor!=0){
-    int month = n*12;
+    int month = n*12; //ввод месяцев
     float m = month/Vibor;
     float I = 15;
-    int S = (P * (pow((1 +((I/100) / (m/12))), ((m/12) * n))));
-    cout <<"Summa vklada = "<<S;
+    int S = (P * (pow((1 +((I/100) / (m/12))), ((m/12) * n)))); //счет вклада
+    cout <<"Summa vklada = "<<S; //вывод вклада
     }
 
 }
@@ -18,9 +18,9 @@ void calc(int P, int n, int Vibor)
 
 int main()
 {
-    int P,n,Vibor;
+    int P,n,Vibor; //объявление переменных P, n и Vibor (рубли, года и выбор)
     cout << "Enter P(rubles),n(years) = ";
-    cin >> P >> n;
+    cin >> P >> n; //ввод P, n 
     cout <<"Choose number of months"<<endl;
     cout <<"3"<<endl;
     cout <<"6"<<endl;
@@ -46,7 +46,7 @@ int main()
             Vibor = 0;
             break;
     }
-
+//если кейс совпадает с введеным числом, то выполняется функция calc
     calc(P,n,Vibor);
     
 
