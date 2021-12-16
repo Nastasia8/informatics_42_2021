@@ -50,11 +50,11 @@ class Employee{
         file.open("information");
 
         if (file.is_open()){
-            cout << "File is not open. Error of the recording..." << endl;
+            cout << "File is open, recording is started!" << endl;
             file << "FIO: " << FIO << endl << "Stage: " << stage << endl << "Role: " << role << endl << "Adress: " << adress << endl << "Hours: " << hours << endl << "Price per hour: " << price << endl << "Prize: " << prize << endl << "Salary: " << salary << endl;
         }
         else{
-        cout << "File is open, recording is started!" << endl;
+        cout << "File is not open. Error of the recording..." << endl;
         }
         file.close();
     }
