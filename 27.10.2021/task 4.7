@@ -1,12 +1,11 @@
-#include <iostream >
-
+#include <iostream>
 using namespace std;
 
-void pryamougolnik(int h, int w, char s){
+void pryamougolnik(int h, int w, char s){ //объявление функции
 	for(int i=0; i<h; i++)	{
 		if(i==0){
 		for(int i = 0; i<w; i++){
-			cout<<s;
+			cout<<s; //вывод первой строки (ширина)
 		}
 		cout<<endl;
 	} else if((i!=0) && (i!=h-1)){
@@ -14,11 +13,11 @@ void pryamougolnik(int h, int w, char s){
 		for(int i = 0;i<w-2;i++){
 			cout<<" ";
 		}
-		cout<<s<<endl;
+		cout<<s<<endl; //вывод сторон (длина)
 	}
 	else if(i==h-1){
 		for(int i = 0;i<w;i++){
-			cout<<s;
+			cout<<s; //вывод последней строки (ширина)
 		}
 	}	
 	}
@@ -28,8 +27,8 @@ int main()
 	int h;
 	int w;
 	char s;
-	cin>>h>>w>>s;
-	pryamougolnik(h,w,s);
+	cin>>h>>w>>s; //объявление, ввод переменных
+	pryamougolnik(h,w,s); //обращение к функции прямоугольник
 }
 
 //Alexandr Butusov helped
