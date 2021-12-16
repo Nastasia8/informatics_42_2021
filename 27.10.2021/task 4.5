@@ -3,20 +3,20 @@
 using namespace std;
 
 
-void calc(int x, int y, int z){
-    float x1,x2;
-    float D = y*y - 4*x*z;
+void calc(int x, int y, int z){ //функция calc
+    float x1,x2; //объявление переменных, значение которых - нецелые числа
+    float D = y*y - 4*x*z; //объявление переменной дискриминанта
     if (D>0) {
         x1 = (-y + sqrt(D))/2*x;
         x2 = (-y - sqrt(D))/2*x;
-        cout <<"Korni -> " <<x1 <<" "<< x2;
+        cout <<"Korni -> " <<x1 <<" "<< x2; //при D>0, выполняется нахождение корней х1 и х2, их вывод
 		 }
 	  else if (D==0) {
         x1 = -y/2*x;
-        cout <<"Koren -> " << x1 ;
+        cout <<"Koren -> " << x1 ; //при D=0, выполняется нахождение х1, его вывод
 
      } else {
-        cout<<"Korney net";
+        cout<<"Korney net"; //в случае D<0, выводится "корней нет"
      }
 
 }
@@ -24,9 +24,9 @@ void calc(int x, int y, int z){
 
 int main(){
 	cout<<"Type x, y and z"<<endl;
-    int x,y,z;
-    cin >> x>> y >> z;
-    calc(x,y,z);
+    int x,y,z; //объявление переменных
+    cin >> x>> y >> z; //ввод значений переменных
+    calc(x,y,z); //обращение к функции
  
 
 
