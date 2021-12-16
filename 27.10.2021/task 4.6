@@ -3,11 +3,11 @@
 using namespace std;
 
 
-void calc(int n) {
-    int proizvedenie = 1;
+void calc(int n) { //объявление функции
+    int proizvedenie = 1; //переменная произведения равна 1
     while (n>0) {
-        proizvedenie *= n % 10;
-        n /= 10;
+        proizvedenie *= n % 10; //пока n больше 0, выполняется произведение цифр числа
+        n /= 10; //разбор числа
     }
     cout<<proizvedenie;
 }
@@ -17,10 +17,10 @@ int main(){
     long n;
     cin>>n;
     while (n<100000 || n>999999) {
-        cout<<"Chislo ne sootvet trebovaniu"<<endl;
+        cout<<"Chislo ne sootvet trebovaniu"<<endl; //пока число не шестизначное, выводим ошибку
         cin >>n;
     }
-    calc(n);
+    calc(n); //обращение к функции
 
 }
 
