@@ -1,0 +1,7 @@
+FIO: Uno Dos Quadro
+Staj: 5
+Position: IT Support Manager
+Adress: Shuya, Sverdlova 48
+Number: 3236236246
+Hours: 204
+The cost of one hour of work: 450
