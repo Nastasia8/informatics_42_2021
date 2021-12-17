@@ -77,7 +77,7 @@ public:
                 buff[i][j] = arr[j][i];
             }
         }
-
+        
         for (int i = 0; i < rows; i++){
          delete[] arr[i];
         }
@@ -87,11 +87,11 @@ public:
         for (int i = 0; i < columns; i++){
         arr[i] = new int [rows];
         }
-
+        
         std::swap(arr, buff);
         std::swap(rows, columns);
 
-        for (int i = 0; i < columns; i++){
+        for (int i = 0; i < rows; i++){
          delete[] buff[i];
         }
         delete [] buff;
