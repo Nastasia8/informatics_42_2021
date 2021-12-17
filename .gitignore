@@ -39,9 +39,10 @@ cmake*
 *.out
 *.app
 
-# VsCodeShit
+# VsCodeShit + ClionShit
 
 .vscode
+.idea
 
 # Experiments folder
 
