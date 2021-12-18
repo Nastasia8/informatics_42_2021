@@ -228,12 +228,9 @@ int main()
 	array.transpose();
 	
 	Massive array1(2, 3);
-	
-	array1.show();
+
 	int** array1_ptr = array1.get_arr();
-	
 	array.sum_mtx(array1_ptr);
-	
 	for (int i = 0; i < array1.get_row(); i++)
 	{
 		delete[] array1_ptr[i];
@@ -244,4 +241,3 @@ int main()
 
 	return 0;
 }
-
