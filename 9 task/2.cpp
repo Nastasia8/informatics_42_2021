@@ -28,7 +28,7 @@ enum PasAvia
 };
 
 
-class Nalog
+class Transport
 {
 protected:
     int energy;
@@ -46,7 +46,7 @@ public:
     virtual void Show() = 0;
 };
 
-class PassengerCar : public Nalog
+class PassengerCar : public Transport
 {
 private:
     float increasing_tax;
@@ -168,7 +168,7 @@ public:
     }
 };
 
-class Bus : public Nalog
+class Bus : public Transport
 {
 private:
     float sum;
@@ -265,7 +265,7 @@ public:
     }
 };
 
-class Bike : public Nalog
+class Bike : public Transport
 {
 private:
     float sum;
@@ -364,7 +364,7 @@ public:
     }
 };
 
-class Avia : public Nalog
+class Avia : public Transport
 {
 private:
     float sum;
