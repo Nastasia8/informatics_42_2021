@@ -11,10 +11,11 @@ inline bool NotNullString(std::string str) {
 
 template<class T>
 T Validation(bool (*function)(T value), T value, std::string paramName) {
-    while (!function(value)) {
-        std::cout << "You enter wrong " << paramName << "." << std::endl
-                  << "Please enter it correctly" << std::endl;
-        std::cin >> value;
+    try {if (!function(value)) {
+        throw paramName;
+    }}
+    catch (std::string paramName) {
+        std::cerr << paramName << "isn't valid";
     }
     return value;
 }
