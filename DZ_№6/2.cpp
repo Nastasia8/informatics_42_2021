@@ -6,7 +6,7 @@ void calc(int num,int base)
 
     if (num == 0)
         return;
-    int rem = num /*введённое число пользователем*/ % base/*ссистема счисления*/;
+    int rem = num /*введённое число пользователем*/ % base/*ссистема счисления*/; // rem - это остаток
     if (rem <= 9)
         {
             calc(num/base,base);
