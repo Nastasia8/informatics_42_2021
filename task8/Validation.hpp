@@ -11,11 +11,13 @@ inline bool NotNullString(std::string str) {
 
 template<class T>
 T Validation(bool (*function)(T value), T value, std::string paramName) {
-    try {if (!function(value)) {
-        throw paramName;
-    }}
-    catch (std::string paramName) {
-        std::cerr << paramName << "isn't valid";
+    try {
+        if (!function(value)) {
+            throw paramName;
+        }
+    } catch (std::string paramName) {
+        std::cerr << paramName << " isn't valid\n";
+        exit(EXIT_FAILURE);
     }
     return value;
 }
