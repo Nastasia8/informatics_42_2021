@@ -15,71 +15,36 @@ class Pendulum
 		float period_;
 		
 	public:
+		Pendulum(string type) { set_type(type); }	
+		void set_type(string type) { type_ = type; }
+		string get_type() { return type_; }
 		
-		Pendulum(string type)
-		{
-			set_type(type);
-		}
-		
-		void set_type(string type)
-		{
-			type_ = type;
-		}
-		
-		string get_type()
-		{
-			return type_;
-		}
-		
-		void show_type()
-		{
-			cout << "Type: " << get_type() << endl;
+		virtual void ShowType() 
+		{ 
+			cout << "Type: " << get_type() << endl; 
 			cout << "Frequency: " << Frequency() << endl;
 			cout << "Period " << Period() << endl;
 		}
-		
-		float Frequency()
-		{
-			return frequency_;
-		}
-		
-		float Period()
-		{
-			return period_;
-		}
+		virtual float Frequency() { return frequency_; }
+		virtual float Period() { return period_; }
 };
 
 class MathematicalPendulum : public Pendulum
 {
 	private:
 		int len_;
-	
+		
 	public:
+		MathematicalPendulum(string type, int len) : Pendulum(type) { set_len(len); }
+		void set_len(int len) { len_ = len; }
 		
-		MathematicalPendulum(string type, int len) : Pendulum(type)
-		{
-			set_len(len);
-		}
-		
-		void set_len(int len)
-		{
-			len_ = len;
-		}	
-		
-		void show()
-		{
-			cout << "Type: " << get_type() << endl;
-			cout << "Frequency: " << Frequency() << endl;
-			cout << "Period " << Period() << endl;
-		}
-		
-		float Frequency()
+		float Frequency() override
 		{
 			frequency_ = sqrt(G/len_);
 			return frequency_;
 		}
 		
-		float Period()
+		float Period() override
 		{
 			period_ = 2 * PI * sqrt(len_/G);
 			return period_;
@@ -93,37 +58,22 @@ class SpringPendulum : public Pendulum
 		float stiffness_;
 	
 	public:
-		
 		SpringPendulum(string type, float mas, float stiffness) : Pendulum(type)
 		{
 			set_mas(mas);
 			set_stiffness(stiffness);
 		}
 		
-		void set_mas(float mas)
-		{
-			mas_ = mas;
-		}
+		void set_mas(float mas) { mas_ = mas; }
+		void set_stiffness(float stiffness) { stiffness_ = stiffness; }
 		
-		void set_stiffness(float stiffness)
-		{
-			stiffness_ = stiffness;
-		}
-		
-		void show()
-		{
-			cout << "Type: " << get_type() << endl;
-			cout << "Frequency: " << Frequency() << endl;
-			cout << "Period " << Period() << endl;
-		}
-		
-		float Frequency()
+		float Frequency() override
 		{
 			frequency_ = sqrt(stiffness_ / mas_);
 			return frequency_;
 		}
 		
-		float Period()
+		float Period() override
 		{
 			period_ = 2 * PI * sqrt(mas_ / stiffness_);
 			return period_;
@@ -138,7 +88,6 @@ class PhysicalPendulum : public Pendulum
 		float l_;
 	
 	public:
-		
 		PhysicalPendulum(string type, float mas, float eps, float l) : Pendulum(type)
 		{
 			set_mas(mas);
@@ -146,35 +95,17 @@ class PhysicalPendulum : public Pendulum
 			set_l(l);
 		}
 		
-		void set_mas(float mas)
-		{
-			mas_ = mas;
-		}
-		
-		void set_eps(float eps)
-		{
-			eps_ = eps;
-		}
-		
-		void set_l(float l)
-		{
-			l_ = l;
-		}
-		
-		void show()
-		{
-			cout << "Type: " << get_type() << endl;
-			cout << "Frequency: " << Frequency() << endl;
-			cout << "Period " << Period() << endl;
-		}
-		
-		float Frequency()
+		void set_mas(float mas) { mas_ = mas; }
+		void set_eps(float eps) { eps_ = eps; }	
+		void set_l(float l) { l_ = l; }
+
+		float Frequency() override
 		{
 			frequency_ = sqrt((mas_ * G * eps_) / l_);
 			return frequency_;
 		}
 		
-		float Period()
+		float Period() override
 		{
 			period_ = 2 * PI * sqrt(l_ / (mas_ * G * eps_));
 			return period_;
@@ -184,15 +115,15 @@ class PhysicalPendulum : public Pendulum
 int main()
 {
 	MathematicalPendulum* pendulum = new MathematicalPendulum("Mathematical", 10);
-	pendulum->show();
+	pendulum->ShowType();
 	delete pendulum;
 	
 	SpringPendulum* pendulum1 = new SpringPendulum("Spring", 10, 0.1);
-	pendulum1->show();
+	pendulum1->ShowType();
 	delete pendulum1;
 	
-	PhysicalPendulum* pendulum2 = new PhysicalPendulum("Physical", 10, 0.1, 0.5);
-	pendulum2->show();
+	PhysicalPendulum* pendulum2 = new PhysicalPendulum("Physical", 10, 0.1, 1);
+	pendulum2->ShowType();
 	delete pendulum2;
 	
 	return 0;
