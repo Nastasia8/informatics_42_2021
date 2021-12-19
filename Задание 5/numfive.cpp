@@ -6,13 +6,13 @@ using namespace std;
 void FindMin (int ** arr, int rows, int cols, int *_Min_mass)
 {
 
- int min_value = 100000;
+ int min_value = 1000;
 
  for (int i = 0; i < rows; i++)
 
      {
 
-     min_value = 100000;
+     min_value = 1000;
 
      for (int j = 0; j < cols; j++)
          {
@@ -31,6 +31,7 @@ void FindMin (int ** arr, int rows, int cols, int *_Min_mass)
  cout << "Min element in line = { ";
 
  for (int i = 0; i < rows; i++)
+
      {
 
      cout << _Min_mass[i] << " ";
@@ -45,7 +46,7 @@ int main()
 
 {
 
-  srand(time(0));
+  srand(time(NULL));
   
   int rows;
 
@@ -102,19 +103,21 @@ int main()
 
         }
 
-cout << endl;
+ cout << endl;
 
 
 
-int *_Min_mass = new int[rows];
+ int *_Min_mass = new int[rows];
 
-FindMin(arr, rows, cols, _Min_mass);
+ FindMin(arr, rows, cols, _Min_mass);
 
-delete[] _Min_mass;
+ delete[] _Min_mass;
 
-for (int i = 0; i < rows; i++)
-{
+ for (int i = 0; i < rows; i++)
+    {
 
- delete[] arr[i];
+     delete[] arr[i];
+
+    }
 
 }
