@@ -13,7 +13,6 @@ new_c = 1,
  
 class Car
 {
-    private:
     CarState state;
     string brand;
     string model;
@@ -30,7 +29,9 @@ public:
         k +=1;
         CarState state = old;
     }
+
     Car(string brand, string model, int year, CarState state)
+    
     {
         this -> brand = brand;
         this -> model = model;
