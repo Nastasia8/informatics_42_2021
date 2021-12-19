@@ -3,23 +3,23 @@
 using namespace std;
 
 
-void calc(int x, int y){
-   int sum = 0;
-   for (int i = x; i<=y;i++){
-       if(i%2 == 0) {
-           sum+=i;
+void calc(int x, int y){ //объявление функции, использование х и у
+   int sum = 0; //переменная суммы равна 0
+   for (int i = x; i<=y;i++){ //диапазон от x до у
+       if(i%2 == 0) { //если число кратно двум, то
+           sum+=i; //к переменной sum прибавляется это число
        }
 
    }
-   cout <<"Summ = "<<sum<<endl;
+   cout <<"Summ = "<<sum<<endl; //вывод суммы
 
 }
 
 int main(){
     cout<<"Enter the first numver and the last one"<<endl;
-	int x,y;
-    cin >> x>> y;
-    calc(x,y);
+	int x,y; //объявление х и у
+    cin >> x>> y; //ввод значений переменных
+    calc(x,y); //обращение к функциии
 
 }
 //Alexandr Butusov helped

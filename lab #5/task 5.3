@@ -7,19 +7,19 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    int minim = 10000;
+    int minim = 10000; //ввод переменной минимального числа
     int k;
-    cout << "Print number of length = " << endl;
+    cout << "Print number of length = " << endl; //ввод длину массива
     cin >> k;
-    int *p = new int [k];
+    int *p = new int [k]; //создание массива длиной К
     for (int i=0; i<k; i++)
    {
     p[i] = rand() % 100;
-    cout<<p[i]<<endl;
+    cout<<p[i]<<endl; //заполнение случайными значениями массива и его вывод
   }
   for (int i=0; i<k;i++)
   {
-    if(p[i]<minim)
+    if(p[i]<minim) //нахождение минимального числа в массиве
     {
       minim=p[i];
     }
