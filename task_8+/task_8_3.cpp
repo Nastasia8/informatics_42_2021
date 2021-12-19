@@ -12,14 +12,14 @@ public:
     int rows = 4;
     int cols = 5;
 
-    Massive()
+    Massive() 
     {
         arr = new int* [rows];
 
         for (int i = 0; i < rows; i++)
         {
             arr[i] = new int[cols];
-        }
+        } 
     }
 
     ~Massive()
@@ -29,7 +29,13 @@ public:
             delete arr[i];
             delete arr_db[i];
         }
-        
+        for (int i = 0; i < cols; i++)
+        {
+            delete arr_t[i];
+        }
+
+
+        delete[] arr_t;       
         delete[] arr;
         delete[] arr_db;        
     }
@@ -148,7 +154,7 @@ public:
 
     void Transposition()
     {
-        int** arr_t = new int* [cols];
+        arr_t = new int* [cols];
         for (int i = 0; i < cols; i++)
         {
             arr_t[i] = new int[rows];
@@ -174,12 +180,6 @@ public:
             }
             cout << endl << endl;
         }
-
-        for (int i = 0; i < cols; i++)
-        {
-            delete arr_t[i];
-        }
-        delete[] arr_t;
     }
 
     void Sum_matrix()
