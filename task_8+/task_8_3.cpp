@@ -20,28 +20,18 @@ public:
         {
             arr[i] = new int[cols];
         }
-
-        Set_Value();
-        Show_Value();
-        Odd_Elem();
-        Max_Elem_Cols(); 
-        Average_Value_Elem_Cols();
-        Transposition();
-        Sum_matrix();
-        Edit_arr();
-        cout << endl << "Edit matrix" << endl;
-        Show_Value();
-
     }
 
-   ~Massive()
+    ~Massive()
     {
         for (int i = 0; i < rows; i++)
         {
             delete arr[i];
+            delete arr_db[i];
         }
-
+        
         delete[] arr;
+        delete[] arr_db;        
     }
 
     void Set_Value()
@@ -67,10 +57,10 @@ public:
         }
     }
 
-    int Odd_Elem() 
+    int Odd_Elem()
     {
         Operation = new int[rows];
-        
+
         for (int i = 0; i < rows; i++)
         {
             int sum = 0;
@@ -88,12 +78,12 @@ public:
         for (int i = 0; i < rows; i++)
         {
             cout << Operation[i] << "\t";
-           
+
         }
         cout << endl;
 
-        delete[] Operation;     
-        
+        delete[] Operation;
+
         return 0;
     }
 
@@ -124,7 +114,7 @@ public:
 
         }
         cout << endl;
-        
+
         delete[] Operation;
     }
 
@@ -139,7 +129,7 @@ public:
             for (int j = 0; j < rows; j++)
             {
                 aver_val += arr[j][i];
-                              
+
             }
             aver_val /= rows;
             Operation[i] = aver_val;
@@ -170,7 +160,7 @@ public:
                 arr_t[j][i] = arr[i][j];
 
             }
-           
+
         }
 
         cout << endl << "Transposition" << endl;
@@ -180,16 +170,22 @@ public:
             for (int j = 0; j < rows; j++)
             {
                 cout << arr_t[i][j] << "\t";
-            
+
             }
             cout << endl << endl;
         }
+
+        for (int i = 0; i < cols; i++)
+        {
+            delete arr_t[i];
+        }
+        delete[] arr_t;
     }
 
     void Sum_matrix()
     {
         srand(time(NULL));
-        
+
         arr_db = new int* [rows];
 
         for (int i = 0; i < rows; i++)
@@ -208,7 +204,7 @@ public:
         cout << endl << "New marix:" << endl;
         for (int i = 0; i < rows; i++)
         {
-            
+
             for (int j = 0; j < cols; j++)
             {
                 cout << arr_db[i][j] << "\t";
@@ -250,7 +246,17 @@ public:
 int main() {
     //srand(time(NULL));
     Massive mas;
-    
+
+    mas.Set_Value();
+    mas.Show_Value();
+    mas.Odd_Elem();
+    mas.Max_Elem_Cols();
+    mas.Average_Value_Elem_Cols();
+    mas.Transposition();
+    mas.Sum_matrix();
+    mas.Edit_arr();
+    cout << endl << "Edit matrix" << endl;
+    mas.Show_Value();
 
     return 0;
 }
