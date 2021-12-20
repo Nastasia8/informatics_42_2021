@@ -93,11 +93,11 @@ int main()
 
           for (int j = 0; j < cols; j++)
 
-             {
+            {
 
              cout << arr[i][j] << "\t";
 
-             }
+            }
  
             cout << endl;
 
@@ -114,10 +114,13 @@ int main()
  delete[] _Min_mass;
 
  for (int i = 0; i < rows; i++)
+
     {
 
      delete[] arr[i];
 
     }
+
+ delete[] arr;
 
 }
