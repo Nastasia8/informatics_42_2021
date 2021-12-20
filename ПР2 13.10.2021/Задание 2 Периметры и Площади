@@ -1,0 +1,45 @@
+#include <iostream>//Ввод и вывод данных
+//Задание взял у Александра Бутусова 1/42
+#include <cmath> //Использоание математических функций
+using namespace std; //Использование всего, что находится в пространстве
+void trapeze(int a, int b, int c, int d) //Указатель функции
+{
+    cout <<"Perimetr trapeze = "<<a + b+ c + d<<endl; //Вывод данных
+}
+void trapeze(int a, int b, int h) //Указатель функции
+{
+    cout <<"Square trapeze = "<<(a + b)/2 * h<<endl; //Вывод данных
+}
+void circle(int,int R, float PI) //Указатель функции
+{
+    cout <<"Perimetr circle = "<< 2*PI*R <<endl; //Вывод данных
+}
+void circle(int R, float PI) //Указатель функции
+{
+    cout <<"Square circle = "<< PI*R*R <<endl; //Вывод данных
+}
+void square(int a, int) //Указатель функции
+{
+    cout <<"Perimetr square = "<< a*4 <<endl; //Указатель функции
+}
+void square(int a) //Указатель функции
+{
+    cout <<"Square square = "<< a*a <<endl; //Вывод данных
+}
+int main() //Существует функция с именем main и функция возвращает целое число типа int
+{
+    int a,b,c,d,h,R; //Передача данных
+    const float PI = 3.14; //Константа и Переменные с плавающей точкой
+    cout <<"Enter variables for trapeze: = "; //Вывод данных
+    cin>>a>>b>>c>>d>>h; //Ввод данных
+    trapeze(a,b,h); //Трапеция
+    trapeze(a,b,c,d); //Трапеция
+    cout <<"Enter variable for circle: = "; //Вывод данных
+    cin>>R; //Ввод данных
+    circle(2,R,PI); //Круг
+    circle(R,PI); //Круг
+    cout <<"Enter variable for square: = "; //Вывод данных
+    cin >> a; //Ввод данных
+    square(a,4); //Квадрат
+    square(a); //Квадрат
+}
