@@ -14,12 +14,11 @@ SetConsoleOutputCP(CP_UTF8);
     int c = 0;
 
     cout << "Были" << endl << a << endl << b << endl << c << endl;
-
     cout << "============" << endl << "Стали" << endl;
 
     function(&a, &b, &c);
 
-   cout << a << endl << b << endl << c << endl;
+    cout << a << endl << b << endl << c << endl;
 
     return 0;
 }
