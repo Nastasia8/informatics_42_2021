@@ -3,7 +3,7 @@
 
 using namespace std;
 
-float Scalar(int x,int a,int y,int b,int z,int c)
+float Scalar(int x, int a, int y, int b, int z, int c)
 {
     return x*a + y*b + z*c;
 }
