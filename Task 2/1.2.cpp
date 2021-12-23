@@ -8,11 +8,13 @@ float Vector(int x, int y, int z)
 }
 void Vector(int x, int y, int z, float length)
 {
-    cout << "unit length vector = " << x / length << " " << y / length << " " << z / length << endl;
+    cout << " Eдиничный вектор длины = " << x / length << " " << y / length << " " << z / length << endl;
 
 }
 int main()
 {
+    setlocale(LC_ALL, "Russian");
+
     int x = 1;
     int y = 5;
     int z = 3;
