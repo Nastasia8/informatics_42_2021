@@ -8,7 +8,7 @@ enum Passenger_car // Создаём перечисление для типов 
     Targa,
     PickUp
 };
-enum Аutobus // Создаём перечисление для типов Аutobus
+enum Autobus // Создаём перечисление для типов Аutobus
 {
     City = 1,
     InterCity,
@@ -145,7 +145,7 @@ class Bus : public Transport // наследуем информацию из к�
 {
 private:
     float sum;
-    Аutobus BusType;
+    Autobus BusType;
 
     //Табличные значения
     float getNalog() override 
@@ -162,7 +162,7 @@ private:
     // функция для выбора типа автобуса
     void unique() override
     {   
-        BusType = (Аutobus)n;
+        BusType = (Autobus)n;
         switch(BusType)
         {
             case City:
