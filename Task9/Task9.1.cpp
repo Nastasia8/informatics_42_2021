@@ -9,11 +9,12 @@ public:
     virtual double getCycFreq() =0; //cycling frequency is w = 2*pi/T
     virtual double getSwingPeriod() =0;
     
-	/*	Swing Period is T = 2*pi * sqrt(m/k) - spring,
-    sqrt(l/g) - mathematical, sqrt(J/mgs) - physical*/
+	/*Swing Period is T = 2*pi * sqrt(m/k) - spring,
+    sqrt(l/g) - mathematical, sqrt(J/mgs) - physical
     
-    /* m - mass, k - jestkost prujiny, l - length,
+    m - mass, k - jestkost prujiny, l - length,
     g=10, J - moment inercii, s - rasstoyanie */
+
     virtual void showType()=0;
 	int pi=3.14;
 };
