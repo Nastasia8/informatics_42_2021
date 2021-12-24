@@ -26,15 +26,18 @@ public:
         this->l = l;
         this->I = I;
     }
-    double cyclic_frequency() override//частота маятника
+    double cyclic_frequency() override 
+    //частота маятника
     {
         return sqrt(m*g*l/I);
     }
-    double period_pendulum() override//период маятника
+    double period_pendulum() override
+    //период маятника
     {
         return 2 * 3.14 * sqrt(I/m*g*l);
     }
-    void showPendulum() override//вывод физического маятника
+    void showPendulum() override
+    //вывод физического маятника
     {
         cout << "Pendulum is physical" << endl;
     }
@@ -51,15 +54,18 @@ public:
         this->g = g;
         this->l = l;
     }
-    double cyclic_frequency() override//частота маятника
+    double cyclic_frequency() override
+    //частота маятника
     {
         return sqrt(g/l);
     }
-    double period_pendulum() override//период маятника
+    double period_pendulum() override
+    //период маятника
     {
         return 2 * 3.14 * sqrt(l/g);
     }
-    void showPendulum() override//вывод данных математического маятника
+    void showPendulum() override
+    //вывод данных математического маятника
     {
         cout << "Pendulum is math" << endl;
     }
@@ -76,15 +82,18 @@ public:
         this->m = m;
         this->k = k;
     }
-    double cyclic_frequency() override//частота маятника
+    double cyclic_frequency() override
+    //частота маятника
     {
         return sqrt(k/m);
     }
-    double period_pendulum() override//период маятника
+    double period_pendulum() override
+    //период маятника
     {
         return 2 * 3.14 * sqrt(m/k);
     }
-    void showPendulum() override// отображение данных о пружинном маятнике
+    void showPendulum() override
+    // отображение данных о пружинном маятнике
     {
         cout << "Pendulum is spring" << endl;
     }
