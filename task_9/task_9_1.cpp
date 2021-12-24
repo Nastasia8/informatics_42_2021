@@ -5,6 +5,7 @@ using namespace std;
 class Pendulum
 {
 public:
+    float g = 9.8;
     virtual float cyclic_frequency() = 0;
     virtual float oscillation_period() = 0;
     virtual void pendulum_type() = 0;
@@ -12,12 +13,11 @@ public:
 class Phis_Pendulum:Pendulum
 {
 private:
-    float m, g, l, I;
+    float m, l, I;
 public:
-    Phis_Pendulum(float m, float g, float l, float I)
+    Phis_Pendulum(float m, float l, float I)
     {
         this->m = m;
-        this->g = g;
         this->l = l;
         this->I = I;
     }
@@ -37,11 +37,10 @@ public:
 class Math_Pendulum:Pendulum
 {
 private:
-    float g, l;
+    float l;
 public:
-    Math_Pendulum(float g, float l)
+    Math_Pendulum(float l)
     {
-        this->g = g;
         this->l = l;
     }
     float cyclic_frequency() override
@@ -83,11 +82,11 @@ public:
 
 int main()
 {
-    Phis_Pendulum phis_P(1, 2, 3, 4);
+    Phis_Pendulum phis_P(1, 2, 4);
     cout << "Cyclic frequency: " << phis_P.cyclic_frequency() << endl;
     cout << "Oscillation period: " << phis_P.oscillation_period() << endl;
     cout << "This is a "; phis_P.pendulum_type();
-    Math_Pendulum math_P(1, 2);
+    Math_Pendulum math_P(1);
     cout << "Cyclic frequency: " << math_P.cyclic_frequency() << endl;
     cout << "Oscillation period: " << math_P.oscillation_period() << endl;
     cout << "This is a " ; math_P.pendulum_type();
