@@ -11,7 +11,8 @@ int main() {
     SpringPendulum springPendulum(1, 2);
     springPendulum.PrintPendulumType();
     std::cout << "Oscillation period of springPendulum: " << springPendulum.GetOscillationPeriod() << std::endl;
-    std::cout << "Cyclic frequency of springPendulum: " << springPendulum.GetCyclicFrequency() << std::endl << std::endl;
+    std::cout << "Cyclic frequency of springPendulum: " << springPendulum.GetCyclicFrequency() << std::endl
+              << std::endl;
 
     PhysicalPendulum physicalPendulum(1, 2, 4);
     physicalPendulum.PrintPendulumType();

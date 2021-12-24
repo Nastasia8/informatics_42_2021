@@ -2,11 +2,12 @@
 
 class Transport {
 private:
-    unsigned power;
+    unsigned int power;
     double taxRate;
-    unsigned cost;
+    unsigned int cost;
 public:
-    explicit Transport(unsigned int power, double taxRate, unsigned int cost):
-                                    power(power), taxRate(taxRate), cost(cost);
+    explicit Transport(unsigned int power, double taxRate, unsigned int cost) :
+            power(power), taxRate(taxRate), cost(cost);
+
     double getTax() const = 0;
 };
