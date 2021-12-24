@@ -18,7 +18,7 @@ int main(int args, char* argv[]) {
     float xs[5] = { 1.9, 2.15, 2.34, 2.73, 3.16 };
 
     for (auto x : xs) {
-        cout << (a * sqrt(x) - b * log(a)/log(5)) / log10(abs(x - 1)) << endl;
+        cout << ((a+(tg(bx)*tg(bx)))/(b+(ctg(ax)*ctg(ax))))) << endl;
     };
 
     return 0;
