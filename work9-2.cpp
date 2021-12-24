@@ -50,19 +50,19 @@ public:
         {
             tax = power * 2.5 * term;
         }
-        else if (power >= 100 && power <= 150)
+        else if (power > 100 && power <= 150)
         {
             tax = power * 3.5 * term;
         }
-        else if (power >= 150 && power <= 200)
+        else if (power > 150 && power <= 200)
         {
             tax = power * 5 * term;
         }
-        else if (power >= 200 && power <= 250)
+        else if (power > 200 && power <= 250)
         {
             tax = power * 7.5 * term;
         }
-        else if (power >= 250)
+        else if (power > 250)
         {
             tax = power * 15 * term;
         }
@@ -77,19 +77,19 @@ public:
             {
                 tax *= 1.3;
             }
-            else if ((price >= 3 && price <= 5) && value <= 1)
+            else if ((price > 3 && price <= 5) && value <= 1)
             {
                 tax *= 1.5;
             }
-            else if ((price >= 5 && price <= 10) && value <= 5)
+            else if ((price > 5 && price <= 10) && value <= 5)
             {
                 tax *= 2;
             }
-            else if ((price >= 10 && price <= 15) && value <= 10)
+            else if ((price > 10 && price <= 15) && value <= 10)
             {
                 tax *= 3;
             }
-            else if (price >= 15 && value <= 20)
+            else if (price > 15 && value <= 20)
             {
                 tax *= 3;
             }
@@ -119,7 +119,7 @@ public:
         {
             tax = power * 5 * term;
         }
-        else if (power >= 200)
+        else if (power > 200)
         {
             tax = power * 10 * term;
         }
@@ -148,11 +148,11 @@ public:
         {
             tax = power * 1 * term;
         }
-        else if (power >= 20 && power <= 35)
+        else if (power > 20 && power <= 35)
         {
             tax = power * 2 * term;
         }
-        else if (power >= 35)
+        else if (power >35)
         {
             tax = power * 5 * term;
         }
