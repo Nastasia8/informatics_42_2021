@@ -1,13 +1,9 @@
 #include <iostream>
-#include <string.h>
 #include <windows.h>
-#include <fstream>
 #include <time.h>
 using std:: cin;
 using std:: cout;
 using std:: endl;
-using std:: string;
-using std:: ofstream;
 
 class Massive
 {
