@@ -189,7 +189,7 @@ public:
 
 int main()
 {
-    Passengercar p(350, 0, 1, "Toyota Land Cruiser ", 7000000); // Легковой автомобиль с заданными значениями
+    Passengercar p(350, 0, 1, "Toyota Land Cruiser ", 7); // Легковой автомобиль с заданными значениями
     p.Taxx();
     p.Show();
 
