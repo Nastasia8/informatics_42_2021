@@ -87,7 +87,8 @@ public:
             fout << "Домашний адрес: " << this->home_address << endl;
             fout << "Номер телефона: " << this->phone_number << endl;
             fout << "Количество отработанных часов: " << this->number_of_hours_worked << endl;
-            fout << "Стоимость одного часа работы: " << this->cost_of_one_hour_of_work << endl << endl;
+            fout << "Стоимость одного часа работы: " << this->cost_of_one_hour_of_work << endl;
+            fout << "Зарплата у данного работника: " << this->Salary() << endl << endl;
         }
 
         fout.close();
@@ -190,12 +191,12 @@ SetConsoleOutputCP(CP_UTF8);
     cout << endl << "Всего Работников: " << Employee:: k - 1 << endl << endl;
 
     First.Show_Full_Information();
-    First.Salary();
+    cout << "Зарплата у данного работника: " << First.Salary() << endl;
     First.Premium();
     First.Writing_File();
 
     Second.Show_Full_Information();
-    Second.Salary();
+    cout << "Зарплата у данного работника: " << Second.Salary() << endl;
     Second.Premium();
     Second.Writing_File();
    
