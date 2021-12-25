@@ -18,7 +18,7 @@ for(int i=0; i<ROW; i++){
 }
 for(int i=0; i<ROW; i++){
     for(int j=0; j<COL; j++){
-        cout<<(masiv[i][j])<<"/t";
+        cout<<(masiv[i][j])<<"\t";
     }
     cout<<endl;
 }
@@ -41,7 +41,7 @@ for(int i=0; i<ROW; i++){
     masivMax[i] = max;
 }
 for(int i=0; i<ROW; i++){
-    cout<<masivMax[i]<<"/t";
+    cout<<masivMax[i]<<"\t";
 }
     return 0;
 }
