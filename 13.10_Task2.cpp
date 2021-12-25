@@ -15,7 +15,7 @@ int P(int a){
     return result;
 }
  int S(int a, int b, int c){
-     int result = ((a+b)*c)/2;
+     double result = ((a+b)*c)/2;
      return result;
  }
 double S(int a, int pi){
@@ -23,7 +23,7 @@ double S(int a, int pi){
      return result;
  }
 int S(int a){
-    int result = pow(a,2);
+    double result = pow(a,2);
     return result;
 }
 
