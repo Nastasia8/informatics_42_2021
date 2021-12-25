@@ -5,7 +5,7 @@ project(task8)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(task8
+add_executable(
         main.cpp
         Employee.cpp
         Student.cpp
