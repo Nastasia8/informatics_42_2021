@@ -56,7 +56,8 @@ private://создание модификатора private
     PasCar CarType;
 
     // Табличные значения
-    float getNalog() override // переопределение функции
+    float getNalog() override
+     // переопределение функции
     {
         if (energy <= 100) 
         {
@@ -118,7 +119,8 @@ private://создание модификатора private
     }
 public:
 //создание функции для ввод значений
-    void setInfo() override // переопределение функции
+    void setInfo() override
+     // переопределение функции
     {
         cout << endl;
         cout << "Enter energy: "; cin >> energy; 
@@ -130,7 +132,8 @@ public:
         cout << endl;
     } 
     //создание функции для ввод значений
-    void Show() override // переопределение функции
+    void Show() override
+     // переопределение функции
     {
         cout << "Full information of Passenger Car" << endl;
         cout << "Energy of Passenger Car: " << energy << endl;
@@ -151,7 +154,8 @@ private:
     Abobus BusType;
 
     //Табличные значения
-    float getNalog() override  // переопределение функции
+    float getNalog() override
+      // переопределение функции
     {
         if (energy <= 200) {
             tax = 50;
@@ -181,7 +185,8 @@ private:
     }
 public:
 //создание метода для ввод переменных
-    void setInfo() override // переопределение функции
+    void setInfo() override
+     // переопределение функции
     {   
         cout << endl;
         cout << "Enter energy: "; cin >> energy; 
@@ -192,7 +197,8 @@ public:
         cout << endl;
     } 
     //создание метода для вывода переменных
-    void Show() override // переопределяем функцию
+    void Show() override
+     // переопределяем функцию
     {
         cout << "Full information of Bus" << endl;
         cout << "Energy of Bus: " << energy << endl;
@@ -211,7 +217,8 @@ private://создание приватных полей
     MotoBike BikeType;
 
 //Табличные значения
-    float getNalog() override // переопределение функции
+    float getNalog() override
+     // переопределение функции
     {
         if (energy <= 20) {
             tax = 4.5;
@@ -225,7 +232,8 @@ private://создание приватных полей
         return sum;
     }
      //создание метода для выбора мотоцикла
-    void unique() override // переопределение функции
+    void unique() override 
+    // переопределение функции
     {   
         BikeType = (MotoBike)n;
         switch(BikeType)
@@ -243,7 +251,8 @@ private://создание приватных полей
     }
 public:
 //создание функции для ввод переменных
-    void setInfo() override // переопределение функции
+    void setInfo() override
+     // переопределение функции
     {
         cout << endl;
         cout << "Enter energy: "; cin >> energy;
@@ -254,7 +263,8 @@ public:
         cout << endl;
     }
     //создание функции для вывода переменных
-    void Show() override // переопределение функции
+    void Show() override 
+    // переопределение функции
     {
         cout << "Full information of Bike" << endl;
         cout << "Energy of Bike: " << energy << endl;
@@ -274,7 +284,8 @@ private:
     Plane AviaType;
 
     // Табличные значения
-    float getNalog() override // переопределение функции
+    float getNalog() override
+     // переопределение функции
     {
         tax = 100;
         sum = tax * energy * timeOwn;
@@ -299,7 +310,8 @@ private:
     }
 public:
 // функци для ввод переменных
-    void setInfo() override // переопределение функции
+    void setInfo() override 
+    // переопределение функции
     {   
         cout << endl;
         cout << "Enter energy: "; cin >> energy; 
@@ -310,7 +322,8 @@ public:
         cout << endl;
     } 
     //функция для вывод переменных
-    void Show() override // переопределение функции
+    void Show() override
+     // переопределение функции
     {
         cout << "Full information of Avia" << endl;
         cout << "Energy of Avia: " << energy << endl;
