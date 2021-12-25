@@ -28,7 +28,7 @@ public:
     double oscPeriod override{
         return oscPeriod = 2*3.14*paw(I/(massa*g*length), 1/2);
     }
-    double type(){
+    virtual double type(){
         cout<<"Physical pendulum"<<endl;
     }    
 };
