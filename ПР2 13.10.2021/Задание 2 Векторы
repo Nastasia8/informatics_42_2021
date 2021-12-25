@@ -1,0 +1,39 @@
+#include <iostream> //Ввод и вывод данных
+//Задание взял у Александра Бутусова 1/42
+#include <cmath> //Использоание математических функций
+using namespace std; //Использование всего, что находится в пространстве
+float VectorLength(int x, int y, int z) //Переменные с плавающей точкой
+{
+    return sqrt(x*x + y*y + z*z); //Возвращение значения и возведение в квадрат
+}
+void SingleVector(int x, int y, int z, float length) //Указатель функции
+{
+    cout<<"Single Vector = "<<x/length<<" "<<y/length<<" "<<z/length<<endl; //Вывод данных
+}
+float ScalarProduct(int x,int a,int y,int b,int z,int c) //Переменные с плавающей точкой
+{
+    return x*a + y*b + z*c;  //Возвращение значения
+}
+void VectorProduct(int x,int a,int y,int b,int z,int c) //Указатель функции
+{
+    cout<<"Vector Product = "<<y*c - z*b<<" "<<-1*(x*c - z*a)<<" "<<x*b - y*a<<endl; //Вывод данных
+}
+int main() //Существует функция с именем main и функция возвращает целое число типа int
+{
+    int x = 1; //Передача данных
+    int y = 5; //Передача данных
+    int z = 3; //Передача данных
+    int a,b,c; //Передача данных
+    cout <<"1.1"<<endl; //Вывод данных
+    float length = VectorLength(x, y, z); //Переменные с плавающей точкой
+    cout<<"Vector Length = "<<length<<endl; //Вывод данных
+    cout <<"1.2"<<endl; //Вывод данных
+    SingleVector(x, y, z, length); //Вектор, его данные и длина
+    cout <<"1.3"<<endl; //Вывод данных 
+    cout <<"Enter variables = "; //Вывод данных
+    cin >>a>>b>>c; //Ввод данных
+    cout <<"Scalar Product = "<<ScalarProduct(x, a, y, b, z, c)<<endl; //Вывод данных
+    cout <<"1.4"<<endl; //Вывод данных
+    VectorProduct(x, y, z, a, b, c); //Данные векторов
+    return 0; //Завершение работы
+}
