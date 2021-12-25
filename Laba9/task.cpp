@@ -15,9 +15,9 @@ class physical_pendulum : public Pendulum// создание класса нас
 {
 private:
     double m;//объявление приватных переменных
-    double g;
-    double l;
-    double I;
+    double g;//
+    double l;//
+    double I;//
 public:
     physical_pendulum(double m, double g, double l, double I)//передача данных
     {
