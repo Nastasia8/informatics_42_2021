@@ -5,7 +5,7 @@ using namespace std;
 
 class Pendulum{
     public:
-    double cyclicFreq = 0;
+    virtual double cyclicFreq = 0;
     double oscPeriod = 0;
     string type = "";    
 };
@@ -23,12 +23,12 @@ public:
         this->I = I;
     }
     double cyclicFreq override {
-        return cyclicFreq = paw((massa*g*length)/I, 1/2);_
+        return cyclicFreq = pow((massa*g*length)/I, 1/2);_
     }
     double oscPeriod override{
-        return oscPeriod = 2*3.14*paw(I/(massa*g*length), 1/2);
+        return oscPeriod = 2*3.14*pow(I/(massa*g*length), 1/2);
     }
-    virtual double type(){
+   void type(){
         cout<<"Physical pendulum"<<endl;
     }    
 };
@@ -44,10 +44,10 @@ public:
         this->length = length;
     }
     double cyclicFreq override {
-        return cyclicFreq = paw(g/length, 1/2);_
+        return cyclicFreq = pow(g/length, 1/2);_
     }
     double oscPeriod override{
-        return oscPeriod = 2*3.14*paw(length/g, 1/2);
+        return oscPeriod = 2*3.14*pow(length/g, 1/2);
     }
     double type(){
         cout<<"Math pendulum"<<endl;
@@ -62,10 +62,10 @@ public:
         this->k = k;
     }
     double cyclicFreq override {
-        return cyclicFreq = paw(k/massa, 1/2);_
+        return cyclicFreq = pow(k/massa, 1/2);_
     }
     double oscPeriod override{
-        return oscPeriod = 2*3.14*paw(massa/k, 1/2);
+        return oscPeriod = 2*3.14*pow(massa/k, 1/2);
     }
     double type(){
         cout<<"Spring pendulum"<<endl;
