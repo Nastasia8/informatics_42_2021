@@ -33,6 +33,8 @@ SetConsoleOutputCP(CP_UTF8);
     return 0;
 }
 
+
+
 void fill_array(int *arr, int size)
 {
 	for (int i = 0; i < size; i++)

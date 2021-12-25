@@ -4,7 +4,7 @@ using std:: cout;
 using std:: endl;
 using std:: cin;
 
-int function (int);
+void function (int);
 
 
 int main(){
@@ -21,27 +21,19 @@ SetConsoleOutputCP(CP_UTF8);
 }
 
 
-int function (int n)
+void function (int n)
 {
- int nMas[n];
-  for (int i = 2; i <= n; ++i)
-  {
-    nMas[i] = i;
-  }
-  for (int i = 2; i < n; ++i)
-  {
-    for (int j = 2; (j <= i) && ((i*j) < n); ++j)
-    {
-       if (0 != nMas[j] ) 
+  int i, j;
+  
+  for (i = 2; i <= n; i++){
+        for (j = 2; j <= i / 2; j++)
         {
-         nMas[j*i] = 0;
+            if (i % j == 0) break;
+        }
+        if (j > (i / 2))
+        {
+          cout << i << " ";
         } 
     }
-  }
-  for (int i = 1; i < n; ++i)
-  {
-    if (nMas[i] != 0)
-    cout << i << " ";
-  } 
-  delete[] nMas;
+    cout << endl;
 }

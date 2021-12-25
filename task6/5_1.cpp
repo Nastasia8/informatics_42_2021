@@ -9,10 +9,7 @@ using std::cin;
 int main() {
 SetConsoleCP(CP_UTF8);
 SetConsoleOutputCP(CP_UTF8);
-    int a;
-    int b;
-    int c;
-    int n;
+    int a, b, c, n;
     cout << "Введите три числа" << endl;
     cin>> a >> b >> c;
     int x = a;
@@ -29,8 +26,8 @@ SetConsoleOutputCP(CP_UTF8);
                 b = b % a;
             }
     }
-    while((a!=0) && (b!=0));
-    n = (a+b); 
+    while((a != 0) && (b != 0));
+    n = (a + b); 
     do
     {
       if(n > z)
@@ -41,6 +38,6 @@ SetConsoleOutputCP(CP_UTF8);
       }
     } while ((n != 0) && (z != 0));
     
-    cout << "Наибольший общий делитель (" << x  << "; " << y << "; " << c << ") = " << (n+z);
+    cout << "Наибольший общий делитель (" << x  << "; " << y << "; " << c << ") = " << (n + z);
 
 }

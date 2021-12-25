@@ -14,7 +14,7 @@ SetConsoleOutputCP(CP_UTF8);
     f[2] = 5;
     cout << "Вот они слева направо 15 чисел " << endl;
     function(f);
-
+return 0;
 }
 
 void function(int f[])
