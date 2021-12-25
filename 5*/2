@@ -1,0 +1,116 @@
+#include <iostream>//стандартная библиотека основных операций
+#include <cmath>//библиотека, в которой содержатся функции, предназначенные для выполнения простейших математических операций
+
+int main(int argc, char const* argv[]) //аргумент argc типа integer содержит в себе количество аргументов командной строки. Аргумент argv типа char - указатель на массив строк, каждый элемент массива указывает на аргументы командной строки
+{
+    //тип данных float служит для хранения чисел с плавающей запятой. Этот тип часто используется для операций с данными, считываемыми с аналоговых входов. 
+    float coord[2][8] = { {2.0 , 2.1 , 2.2 , 2.3 , 2.4 , 2.5 , 2.6 , 2.7},{1.220 , 1.253 , 1.256 , 1.232 , 1.175 , 1.091 , 0.985 , 0.850} };//создается  массив значений x (первая фигурная скобка) и y (вторая фигурная скобка)
+
+    std::cout << "Input points value: " << std::endl;//выводится фраза "Значение входных точек:"
+
+    //цикл для выведения таблицы значений x и y
+    for (int i = 0; i < 2; i++) //создается переменная i для шага, при выполнении цикла увеличивается на 1, i<2 т.к. переменных 2
+    {
+        if (i == 0) // если переменная i равна 0, то выводится x, таким образом x будет на 1й строчке
+        {
+            std::cout << "x" << "\t";//выводим "x"
+        }
+        else //иначе
+        {
+            std::cout << "y" << "\t";//выводим "y"
+        }
+        //цикл для выведения значений x и y
+        for (int j = 0; j < 8; j++) //создается переменная j для шага, при выполнении цикла увеличивается на 1, i<8 т.к. значений по 8 для каждой переменной
+        {
+            std::cout << coord[i][j] << "\t";//выводим значения переменных 
+        }
+        std::cout << "" << std::endl;//отступ
+    }
+
+    std::cout << "" << std::endl;//отступ
+    std::cout << "Nearest function is: " << std::endl;//выводится фраза "Близжайщая функция:"
+    std::cout << " y = ax^2 + bx + c " << std::endl;//выводится уравнение
+
+    double sumxze = 8;//создается переменная 
+
+    double sumxon = 0;//создается переменная сумма 
+    double sumxtw = 0;//создается переменная сумма 
+    double sumxth = 0;//создается переменная сумма
+    double sumxfo = 0;//создается переменная сумма
+    double sumy = 0;//создается переменная сумма
+    double sumxony = 0;//создается переменная сумма
+    double sumxtwy = 0;//создается переменная сумма
+
+    for (int j = 0; j < 8; j++) //создается переменная j для шага, при выполнении цикла увеличивается на 1, i<8 т.к. значений по 8 для каждой переменной
+    {
+
+        sumxon += coord[0][j];//сумма всех значений x
+        sumy += coord[1][j];//сумма всех значений y
+
+        sumxtw += pow(coord[0][j], 2);//сумма квадратов всех значений x
+        sumxth += pow(coord[0][j], 3);//сумма кубов всех значений x
+        sumxfo += pow(coord[0][j], 4);//сумма  всех значений x^4
+
+        sumxony += coord[0][j] * coord[1][j];//сумма произведений всех наборов x*y
+        sumxtwy += pow(coord[0][j], 2) * coord[1][j];//сумма всех произведений (x^2 *y)
+
+    }
+    //Нахождение параметров квадратичной функции
+    std::cout << "To find a, b, c need solve this system of linear equations: " << std::endl;//выводится фраза "Чтобы найти a, b, c, нужно решить эту систему линейных уравнений:"
+    std::cout << "" << std::endl;//отступ
+    //система уравнений:
+    std::cout << sumxze << "*c + " << sumxon << "*b + " << sumxtw << "*a = " << sumy << std::endl;
+    std::cout << sumxon << "*c + " << sumxtw << "*b + " << sumxth << "*a = " << sumxony << std::endl;
+    std::cout << sumxtw << "*c + " << sumxth << "*b + " << sumxfo << "*a = " << sumxtwy << std::endl;
+    //параметры a, b, c находят из условия минимума функции:
+    double delta = ((sumxze * sumxtw * sumxfo) + (sumxon * sumxth * sumxtw) + (sumxon * sumxth * sumxtw)) - ((sumxtw * sumxtw * sumxtw) + (sumxon * sumxon * sumxfo) + (sumxth * sumxth * sumxze));
+    //Условия минимума функции сводятся к системе уравнений:
+    double delta_c = ((sumy * sumxtw * sumxfo) + (sumxony * sumxth * sumxtw) + (sumxon * sumxth * sumxtwy)) - ((sumxtw * sumxtw * sumxtwy) + (sumxony * sumxon * sumxfo) + (sumxth * sumxth * sumy));
+    double delta_b = ((sumxze * sumxony * sumxfo) + (sumxon * sumxtwy * sumxtw) + (sumy * sumxth * sumxtw)) - ((sumxtw * sumxony * sumxtw) + (sumxon * sumy * sumxfo) + (sumxtwy * sumxth * sumxze));
+    double delta_a = ((sumxze * sumxtw * sumxtwy) + (sumxon * sumxth * sumy) + (sumxon * sumxony * sumxtw)) - ((sumy * sumxtw * sumxtw) + (sumxon * sumxon * sumxtwy) + (sumxth * sumxony * sumxze));
+
+    double c = delta_c / delta;//параметр C квадратичной функции
+    double b = delta_b / delta;//параметр B квадратичной функции
+    double a = delta_a / delta;//параметр A квадратичной функции
+
+    std::cout << "" << std::endl;//отступ
+    std::cout << "Finded function is: " << std::endl;//выводится фраза "Искомая функция:"
+    std::cout << "y = ";//выводится "y = "
+    //Функция fabs вычисляет абсолютное значение (модуль) и возвращает его |х|
+    if (a > 0) //если a>0, то знак не меняется
+    {
+        std::cout << a << "*x^2 ";//выводится выражение
+    }
+    else //иначе знак меняется на "-"
+    {
+        std::cout << "- " << fabs(a) << "*x^2 ";//выводится выражение
+    }
+    if (b > 0) //если b>0, то знак не меняется
+    {
+        std::cout << "+ " << b << "*x ";//выводится выражение
+    }
+    else //иначе знак меняется на "-"
+    {
+        std::cout << "- " << fabs(b) << "*x ";//выводится выражение
+    }
+    if (c > 0) //если c>0, то знак не меняется
+    {
+        std::cout << "+ " << c << std::endl;//выводится выражение
+    }
+    else //иначе знак меняется на "-"
+    {
+        std::cout << "- " << fabs(c) << std::endl;//выводится выражение
+    }
+
+    double falls = 0;//создается переменная для расчета невязки
+    for (int j = 0; j < 8; j++) //создается переменная j для шага, при выполнении цикла увеличивается на 1, i<8 т.к. значений по 8 для каждой переменной
+    {
+        falls += pow(coord[1][j] - (a * pow(coord[0][j], 2) + b * coord[0][j] + c), 2);//сумма ряда?
+        //Первый член прогрессии j=0, шаг=1, конечный верхний предел = 8
+    }
+    double delta_f = sqrt(falls / 8);//создается переменная, содержащая в себе невязку в поиске аргументов
+    std::cout << "" << std::endl;//отступ
+    std::cout << "Fallibility in finding the arguments: = ";//выводится фраза "Невязка в поиске аргументов: =
+    std::cout << delta_f << std::endl;//выводим данные 
+    return 0;
+}
