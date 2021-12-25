@@ -4,7 +4,7 @@
 
 using namespace std;
 
-float Funk(int h, int w, char s){
+void Funk(int h, int w, char s){
     string M[h][w];
     for(int i=0; i<h; i++){
         for(int j=0; j<w; j++){
