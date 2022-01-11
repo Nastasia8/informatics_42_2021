@@ -86,7 +86,7 @@ private:
 		return cost_of_an_hour_of_work;
 	}
 public:
-	Employee() : full_name("Mishina Violetta Aleksandrovna"), position("disigner"), home_address("Ivanovo, Kalina street, building 20, apartment 28"), experience(1), phone_number("+79158175317"), number_of_hours_worked(560), cost_of_an_hour_of_work(400) {};
+	Employee() : full_name(""), position(""), home_address(""), experience(), phone_number(""), number_of_hours_worked(), cost_of_an_hour_of_work() {};
 	Employee(string full_name, string position, string home_address, int experience, string phone_number, int number_of_hours_worked, int cost_of_an_hour_of_work)
 	{
 		this->full_name = vfull_name(full_name);
